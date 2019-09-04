@@ -1,18 +1,85 @@
 @font-face {
-    font-family: 'Effra';
-    src: url('../fonts/effra/Effra_Std_Bd.ttf') format('truetype');
-}
-
+  font-family: 'Effra-Bold';
+  src: url("../fonts/effra/Effra_Std_Bd.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Effra';
+  src: url("../fonts/effra/Effra_Std_Md.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Effra-Light';
+  src: url("../fonts/effra/Effra_Std_Lt.ttf") format("truetype"); }
 body {
-    font-family: 'Effra', 'Open Sans', sans-serif;
-    margin: 0;
-    color: #414142;
-}
+  font-family: "Effra", "Arial", sans-serif;
+  background-color: #FFFFFF; }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
+section {
+  margin-top: 7em; }
+
+.app-bg-primary {
+  background-color: #F5B698 !important; }
+
+.app-bg-secodary {
+  background-color: #F0CACB !important; }
+
+.app-text-primary {
+  color: #F5B698 !important; }
+
+.app-text-secodary {
+  color: #F0CACB !important; }
+
+.app-btn-accent {
+  font-family: "Effra-Bold", "Arial", sans-serif;
+  background-color: #2363AE !important;
+  color: #FFFFFF !important;
+  font-size: 0.6em;
+  padding: 10px 40px;
+  border-radius: 20px; }
+
+header nav {
+  font-family: "Effra-Bold", "Arial", sans-serif; }
+  header nav button.app-toggler {
+    border-color: transparent !important;
+    transition: color 1s, transform 1s; }
+    header nav button.app-toggler:hover {
+      color: #FFFFFF;
+      transform: rotate(360deg); }
+      header nav button.app-toggler:hover .app-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
+    header nav button.app-toggler:focus {
+      outline: none; }
+    header nav button.app-toggler .app-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(35,99,174)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
+  header nav div.app-navbar-list {
+    background-color: rgba(245, 182, 152, 0.7); }
+    header nav div.app-navbar-list a {
+      color: #2363AE;
+      transition: color 0.5s; }
+      header nav div.app-navbar-list a:hover {
+        color: #FFFFFF; }
+header .app-hero {
+  min-height: 100vh;
+  background-color: #F5B698; }
+
+#functions .function-container {
+  position: relative;
+  color: #FFFFFF; }
+  #functions .function-container .function-icon {
+    position: absolute;
+    left: calc(50% - 50px);
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #F5B698; }
+    #functions .function-container .function-icon .fa-music {
+      font-size: 3em; }
+  #functions .function-container .function-heading {
+    font-family: "Effra-Bold", "Arial", sans-serif;
+    margin-top: 5em; }
+  #functions .function-container .function-description {
+    font-size: 0.6em; }
+
+@media screen and (max-width: 576px) {
+  #functions .function-container {
+    margin: 2.5em 15px; } }
+
+/*# sourceMappingURL=style.css.map */
