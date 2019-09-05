@@ -28,116 +28,192 @@
     <meta content="index,follow" name="robots">
     <title>Muzykon</title>
     <link rel="icon" href="favicon.ico">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-md justify-content-end position-absolute w-100">
-        <button class="navbar-toggler app-toggler" type="button" data-toggle="collapse" data-target="#navbar-content"
-                aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon app-toggler-icon"></span>
-        </button>
+    <input type="checkbox" class="app-nav-trigger" id="nav">
+    <label class="app-nav-trigger-label" for="nav">
+        <span class="app-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+    </label>
 
-        <div class="collapse navbar-collapse app-navbar-list" id="navbar-content">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item text-center mx-1">
-                    <a class="nav-link" href="#news">Aktualności</a>
-                </li>
-                <li class="nav-item text-center mx-1">
-                    <a class="nav-link" href="#services">Galeria</a>
-                </li>
-                <li class="nav-item text-center mx-1">
-                    <a class="nav-link" href="#offer">Ekipa</a>
-                </li>
-                <li class="nav-item text-center mx-1">
-                    <a class="nav-link" href="#">Szkoła muzyczna</a>
-                </li>
-                <li class="nav-item text-center mx-1">
-                    <a class="nav-link" href="#">Studio</a>
-                </li>
-                <li class="nav-item text-center mx-1">
-                    <a class="nav-link" href="#">Sale prób</a>
-                </li>
-                <li class="nav-item text-center mx-1">
-                    <a class="nav-link" href="#contact">Kontakt</a>
-                </li>
-            </ul>
+    <nav class="app-nav d-flex flex-column justify-content-center align-items-center">
+        <div class="app-nav-menu-content d-flex flex-column">
+            <a href="#">UCZE SIĘ</a>
+            <a href="#">GRAM</a>
+            <a href="#">NAGRYWAM</a>
+            <a href="#news">AKTUALNOŚCI</a>
+            <a href="#gallery">GALERIA</a>
+            <a href="#crew">KADRA</a>
+            <a href="#contact">KONTAKT</a>
         </div>
     </nav>
-    <div class="app-hero d-flex justify-content-center align-items-center">
-        HERO
+
+    <div class="container-fluid mh-100 p-0">
+        <div class="row no-gutters">
+            <div class="col-8">
+                <img class="img-fluid" src="./img/hero.png" alt="hero"/>
+            </div>
+            <div class="col-3 align-self-end">
+                <img class="img-fluid" src="./img/logo.png" alt="logo"/>
+            </div>
+        </div>
     </div>
+
 </header>
 
 <main>
     <section id="functions">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm function-container app-bg-primary">
-                    <div class="function-icon d-flex justify-content-center align-items-center app-bg-secodary app-text-primary">
-                        <i class="fas fa-music"></i>
+                <div class="col-md function-container app-bg-primary ml-md-5">
+                    <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
+                        <img class="img-fluid" src="./img/learn.png" alt="learn"/>
                     </div>
-                    <h6 class="function-heading text-center">SZKOŁA MUZYCZNA</h6>
-                    <div class="function-description text-center my-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    <h6 class="function-heading text-center">UCZE SIĘ</h6>
+                    <div class="function-description text-center my-md-5 my-2">
+                        Muzykon to zajęcia muzyczne dla dzieci, młodzieży i dorosłych oraz różnorodne warsztaty i
+                        koncerty.
                     </div>
-                    <div class="d-flex justify-content-center my-3">
-                        <button class="btn app-btn-accent">LOREM IPSUM</button>
+                    <div class="d-flex justify-content-center my-md-5 my-2">
+                        <button class="btn app-btn-accent">SPRAWDŹ</button>
                     </div>
                 </div>
 
-                <div class="col-sm function-container app-bg-secodary mx-sm-3">
-                    <div class="function-icon d-flex justify-content-center align-items-center app-text-primary app-text-secodary">
-                        <i class="fas fa-music"></i>
+                <div class="col-md function-container app-bg-secondary mx-md-3">
+                    <div class="function-icon d-flex justify-content-center align-items-center app-text-primary">
+                        <img class="img-fluid" src="./img/play.png" alt="play"/>
                     </div>
-                    <h6 class="function-heading text-center">SALE PRÓB</h6>
-                    <div class="function-description text-center my-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    <h6 class="function-heading text-center">GRAM</h6>
+                    <div class="function-description text-center my-md-5 my-2">
+                        Muzykon to sale prób, dwie małe i jedna duża.
                     </div>
-                    <div class="d-flex justify-content-center my-3">
-                        <button class="btn app-btn-accent">LOREM IPSUM</button>
+                    <div class="d-flex justify-content-center my-md-5 my-2">
+                        <button class="btn app-btn-accent">SPRAWDŹ</button>
                     </div>
                 </div>
 
-                <div class="col-sm function-container app-bg-primary">
-                    <div class="function-icon d-flex justify-content-center align-items-center app-bg-secodary app-text-primary">
-                        <i class="fas fa-music"></i>
+                <div class="col-md function-container app-bg-primary mr-md-5">
+                    <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
+                        <img class="img-fluid" src="./img/record.png" alt="record"/>
                     </div>
-                    <h6 class="function-heading text-center">STUDIO NAGRAŃ</h6>
-                    <div class="function-description text-center my-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    <h6 class="function-heading text-center">NAGRYWAM</h6>
+                    <div class="function-description text-center my-md-5 my-2">
+                        Muzykon to studio nagrań z profesjonalną reżyserką i świetynmi reżyserami dźwięku.
                     </div>
-                    <div class="d-flex justify-content-center my-3">
-                        <button class="btn app-btn-accent">LOREM IPSUM</button>
+                    <div class="d-flex justify-content-center my-md-5 my-2">
+                        <button class="btn app-btn-accent">SPRAWDŹ</button>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
+    <section id="news">
+        <h1>AKTUALNOŚCI</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md news-container ml-md-5 mt-5 d-flex flex-column justify-content-center">
+                    <span class="news-date text-center">ŚRODA, 14.09.2019</span>
+                    <h6 class="news-heading text-center">LOREM IPSUM</h6>
+                    <div class="news-description text-center">
+                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
+                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
+                        niezmienionym.
+                    </div>
+                </div>
+
+                <div class="col-md news-container ml-md-5 mt-5 d-flex flex-column justify-content-center">
+                    <span class="news-date text-center">ŚRODA, 14.09.2019</span>
+                    <h6 class="news-heading text-center">LOREM IPSUM</h6>
+                    <div class="news-description text-center">
+                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
+                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
+                        niezmienionym.
+                    </div>
+                </div>
+
+                <div class="col-md news-container ml-md-5 mt-5 d-flex flex-column justify-content-center">
+                    <span class="news-date text-center">ŚRODA, 14.09.2019</span>
+                    <h6 class="news-heading text-center">LOREM IPSUM</h6>
+                    <div class="news-description text-center">
+                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
+                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
+                        niezmienionym.
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="gallery">
-
+        <h1>GALERIA</h1>
     </section>
 
     <section id="crew">
+        <h1>KADRA</h1>
+        <div class="container app-bg-primary">
+            <div class="row">
+                <div class="col-md crew-container ml-md-5 mb-5 mb-md-0">
+                    <div class="crew-img-container-out app-bg-secondary">
+                        <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
+                            <img class="img-fluid" src="./img/logo.png" alt="play"/>
+                        </div>
+                    </div>
+                    <h6 class="crew-heading text-center">Imie Nazwisko</h6>
+                    <div class="crew-description text-center">
+                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
+                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
+                        niezmienionym.
+                    </div>
+                </div>
 
+                <div class="col-md crew-container mx-md-3 mb-5 mb-md-0">
+                    <div class="crew-img-container-out app-bg-accent">
+                        <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
+                            <img class="img-fluid" src="./img/logo.png" alt="play"/>
+                        </div>
+                    </div>
+                    <h6 class="crew-heading text-center">Imie Nazwisko</h6>
+                    <div class="crew-description text-center">
+                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
+                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
+                        niezmienionym.
+                    </div>
+                </div>
+
+                <div class="col-md crew-container mr-md-5 mb-5 mb-md-0">
+                    <div class="crew-img-container-out app-bg-secondary">
+                        <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
+                            <img class="img-fluid" src="./img/logo.png" alt="play"/>
+                        </div>
+                    </div>
+                    <h6 class="crew-heading text-center">Imie Nazwisko</h6>
+                    <div class="crew-description text-center">
+                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
+                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
+                        niezmienionym.
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
-
+        <h1>KONTAKT</h1>
     </section>
 
     <section id="map">
@@ -151,7 +227,6 @@
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/font-awesome.min.js"></script>
 <script src="js/smooth-scroll.js"></script>
 
 </body>
