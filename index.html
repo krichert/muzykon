@@ -30,6 +30,8 @@
     <link rel="icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/slick.css" rel="stylesheet">
+    <link href="./css/slick-theme.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -119,8 +121,8 @@
     <section id="news">
         <h1>AKTUALNOŚCI</h1>
         <div class="container">
-            <div class="row">
-                <div class="col-md news-container ml-md-5 mt-5 d-flex flex-column justify-content-center">
+            <div class="row news-slick-container">
+                <div class="px-3 news-container d-flex flex-column justify-content-center">
                     <span class="news-date text-center">ŚRODA, 14.09.2019</span>
                     <h6 class="news-heading text-center">LOREM IPSUM</h6>
                     <div class="news-description text-center">
@@ -131,7 +133,7 @@
                     </div>
                 </div>
 
-                <div class="col-md news-container ml-md-5 mt-5 d-flex flex-column justify-content-center">
+                <div class="px-3 news-container d-flex flex-column justify-content-center">
                     <span class="news-date text-center">ŚRODA, 14.09.2019</span>
                     <h6 class="news-heading text-center">LOREM IPSUM</h6>
                     <div class="news-description text-center">
@@ -142,7 +144,18 @@
                     </div>
                 </div>
 
-                <div class="col-md news-container ml-md-5 mt-5 d-flex flex-column justify-content-center">
+                <div class="px-3 news-container d-flex flex-column justify-content-center">
+                    <span class="news-date text-center">ŚRODA, 14.09.2019</span>
+                    <h6 class="news-heading text-center">LOREM IPSUM</h6>
+                    <div class="news-description text-center">
+                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
+                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
+                        niezmienionym.
+                    </div>
+                </div>
+
+                <div class="px-3 news-container d-flex flex-column justify-content-center">
                     <span class="news-date text-center">ŚRODA, 14.09.2019</span>
                     <h6 class="news-heading text-center">LOREM IPSUM</h6>
                     <div class="news-description text-center">
@@ -158,54 +171,124 @@
 
     <section id="gallery">
         <h1>GALERIA</h1>
+        <div class="container-fluid app-bg-tertiary">
+            <div class="row gallery-slick-container">
+                <div>
+                    <div class="gallery-img-container">
+                        <img class="img-fluid" src="./img/logo.png"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery-img-container">
+                        <img class="img-fluid" src="./img/logo.png"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery-img-container">
+                        <img class="img-fluid" src="./img/logo.png"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery-img-container">
+                        <img class="img-fluid" src="./img/logo.png"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery-img-container">
+                        <img class="img-fluid" src="./img/logo.png"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery-img-container">
+                        <img class="img-fluid" src="./img/logo.png"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery-img-container">
+                        <img class="img-fluid" src="./img/logo.png"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery-img-container">
+                        <img class="img-fluid" src="./img/logo.png"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
     <section id="crew">
         <h1>KADRA</h1>
-        <div class="container app-bg-primary">
-            <div class="row">
-                <div class="col-md crew-container ml-md-5 mb-5 mb-md-0">
-                    <div class="crew-img-container-out app-bg-secondary">
-                        <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
-                            <img class="img-fluid" src="./img/logo.png" alt="play"/>
+        <div class="container-fluid app-bg-primary">
+            <div class="container">
+                <div class="row crew-slick-container">
+                    <div class="crew-container">
+                        <div class="crew-img-container-out app-bg-secondary">
+                            <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
+                                <img class="img-fluid" src="./img/logo.png" alt="play"/>
+                            </div>
+                        </div>
+                        <h6 class="crew-heading text-center">Imie Nazwisko</h6>
+                        <div class="crew-description text-center">
+                            Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                            Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem
+                            próbnej
+                            książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając
+                            praktycznie
+                            niezmienionym.
                         </div>
                     </div>
-                    <h6 class="crew-heading text-center">Imie Nazwisko</h6>
-                    <div class="crew-description text-center">
-                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
-                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
-                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
-                        niezmienionym.
-                    </div>
-                </div>
 
-                <div class="col-md crew-container mx-md-3 mb-5 mb-md-0">
-                    <div class="crew-img-container-out app-bg-accent">
-                        <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
-                            <img class="img-fluid" src="./img/logo.png" alt="play"/>
+                    <div class="crew-container">
+                        <div class="crew-img-container-out app-bg-accent">
+                            <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
+                                <img class="img-fluid" src="./img/logo.png" alt="play"/>
+                            </div>
+                        </div>
+                        <h6 class="crew-heading text-center">Imie Nazwisko</h6>
+                        <div class="crew-description text-center">
+                            Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                            Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem
+                            próbnej
+                            książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając
+                            praktycznie
+                            niezmienionym.
                         </div>
                     </div>
-                    <h6 class="crew-heading text-center">Imie Nazwisko</h6>
-                    <div class="crew-description text-center">
-                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
-                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
-                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
-                        niezmienionym.
-                    </div>
-                </div>
 
-                <div class="col-md crew-container mr-md-5 mb-5 mb-md-0">
-                    <div class="crew-img-container-out app-bg-secondary">
-                        <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
-                            <img class="img-fluid" src="./img/logo.png" alt="play"/>
+                    <div class="crew-container">
+                        <div class="crew-img-container-out app-bg-accent">
+                            <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
+                                <img class="img-fluid" src="./img/logo.png" alt="play"/>
+                            </div>
+                        </div>
+                        <h6 class="crew-heading text-center">Imie Nazwisko</h6>
+                        <div class="crew-description text-center">
+                            Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                            Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem
+                            próbnej
+                            książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając
+                            praktycznie
+                            niezmienionym.
                         </div>
                     </div>
-                    <h6 class="crew-heading text-center">Imie Nazwisko</h6>
-                    <div class="crew-description text-center">
-                        Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
-                        Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej
-                        książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie
-                        niezmienionym.
+
+                    <div class="crew-container">
+                        <div class="crew-img-container-out app-bg-secondary">
+                            <div class="crew-img-container-in app-bg-tertiary d-flex justify-content-center align-items-center">
+                                <img class="img-fluid" src="./img/logo.png" alt="play"/>
+                            </div>
+                        </div>
+                        <h6 class="crew-heading text-center">Imie Nazwisko</h6>
+                        <div class="crew-description text-center">
+                            Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.
+                            Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem
+                            próbnej
+                            książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając
+                            praktycznie
+                            niezmienionym.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -214,6 +297,44 @@
 
     <section id="contact">
         <h1>KONTAKT</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <form class="d-flex flex-column justify-content-center align-items-center">
+                        <label for="name">Imię i nazwisko</label>
+                        <input id="name" type="text" pattern="[A-Za-z]+" title="Podaj tylko litery"/>
+                        <label for="phone">Numer telefonu</label>
+                        <input id="phone" type="text" pattern="[0-9]+" title="Podaj tylko cyfry"/>
+                        <label for="email">Adres email</label>
+                        <input id="email" type="email" title="Podaj poprawny adres email"/>
+                        <label for="message">Treść wiadomości</label>
+                        <textarea id="message" type="email"></textarea>
+                        <input class="app-btn-accent contact-submit-btn" type="submit" value="WYŚLIJ"/>
+                    </form>
+                </div>
+                <div class="col-md d-flex flex-column justify-content-center align-items-center">
+                    <h3 class="contact-heading mt-0">TEL</h3>
+                    <span class="contact-text"><a href="tel:575707887">+48 575 707 887</a></span>
+
+                    <h3 class="contact-heading">ADRES</h3>
+                    <span class="contact-text">ul. Słowackiego 37 <br/> Gdańsk Wrzeszcz</span>
+                    <small><i>(obok Garnizonu)</i></small>
+
+                    <h3 class="contact-heading">REZERWACJE</h3>
+                    <span class="contact-text"><a href="mailto:rezerwacja@muzykon.pl">rezerwacja@muzykon.pl</a></span>
+
+                    <h3 class="contact-heading">INFORMACJE</h3>
+                    <span class="contact-text"><a href="mailto:info@muzykon.pl">info@muzykon.pl</a></span>
+
+                    <hr>
+
+                    <h3 class="contact-heading mt-0">PRZELEWY</h3>
+                    <span class="contact-text">1233 4872 4872 6498 2749 8212 <br/> Lorem Ipsum Bank1</span>
+
+                    <hr>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="map">
@@ -221,13 +342,54 @@
     </section>
 
     <footer>
-
+        <div class="container">
+            <h1>PARTNERZY</h1>
+            <div class="row partners-container">
+                <div class="col-md col-4">
+                    <div class="partners-item"></div>
+                </div>
+                <div class="col-md col-4">
+                    <div class="partners-item"></div>
+                </div>
+                <div class="col-md col-4">
+                    <div class="partners-item"></div>
+                </div>
+                <div class="col-md col-4">
+                    <div class="partners-item"></div>
+                </div>
+                <div class="col-md col-4">
+                    <div class="partners-item"></div>
+                </div>
+                <div class="col-md col-4">
+                    <div class="partners-item"></div>
+                </div>
+            </div>
+            <div class="row link-container justify-content-center">
+                <a class="mx-1" href="#" target="_blank">
+                    <img src="./img/facebook.png" alt="facebook"/>
+                </a>
+                <a class="mx-1" href="#" target="_blank">
+                    <img src="./img/instragram.png" alt="instagram"/>
+                </a>
+                <a class="mx-1" href="#" target="_blank">
+                    <img src="./img/youtube.png" alt="youtube"/>
+                </a>
+            </div>
+            <small class="text-center d-block">Muzyczna Przestrzeń Artystyczna <strong>Muykon 2019 ©</strong></small>
+            <h1>
+                <a href="#" target="_blank">ADMIN PANEL</a>
+            </h1>
+        </div>
     </footer>
 </main>
 
 <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/slick.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/smooth-scroll.js"></script>
-
+<script src="js/use-slick.js"></script>
+<script src="js/map.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXU9SgkzLz8et34cL3u3EWf_hve7y69vQ&callback=initMap"></script>
 </body>
 </html>
