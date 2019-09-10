@@ -32,6 +32,7 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/slick.css" rel="stylesheet">
     <link href="./css/slick-theme.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -48,9 +49,9 @@
 
     <nav class="app-nav d-flex flex-column justify-content-center align-items-center">
         <div class="app-nav-menu-content d-flex flex-column">
-            <a href="#">UCZE SIĘ</a>
-            <a href="#">GRAM</a>
-            <a href="#">NAGRYWAM</a>
+            <a href="school.html">UCZE SIĘ</a>
+            <a href="play.html">GRAM</a>
+            <a href="record.html">NAGRYWAM</a>
             <a href="#news">AKTUALNOŚCI</a>
             <a href="#gallery">GALERIA</a>
             <a href="#crew">KADRA</a>
@@ -73,45 +74,51 @@
 
 <main>
     <section id="functions">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md function-container app-bg-primary ml-md-5">
-                    <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
-                        <img class="img-fluid" src="./img/learn.png" alt="learn"/>
-                    </div>
-                    <h6 class="function-heading text-center">UCZE SIĘ</h6>
-                    <div class="function-description text-center my-md-5 my-2">
-                        Muzykon to zajęcia muzyczne dla dzieci, młodzieży i dorosłych oraz różnorodne warsztaty i
-                        koncerty.
-                    </div>
-                    <div class="d-flex justify-content-center my-md-5 my-2">
-                        <button class="btn app-btn-accent">SPRAWDŹ</button>
-                    </div>
-                </div>
-
-                <div class="col-md function-container app-bg-secondary mx-md-3">
-                    <div class="function-icon d-flex justify-content-center align-items-center app-text-primary">
-                        <img class="img-fluid" src="./img/play.png" alt="play"/>
-                    </div>
-                    <h6 class="function-heading text-center">GRAM</h6>
-                    <div class="function-description text-center my-md-5 my-2">
-                        Muzykon to sale prób, dwie małe i jedna duża.
-                    </div>
-                    <div class="d-flex justify-content-center my-md-5 my-2">
-                        <button class="btn app-btn-accent">SPRAWDŹ</button>
+                <div class="col-md">
+                    <div class="function-container app-bg-primary">
+                        <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
+                            <img class="img-fluid" src="./img/learn.png" alt="learn"/>
+                        </div>
+                        <h6 class="function-heading text-center">UCZE SIĘ</h6>
+                        <div class="function-description text-center">
+                            Muzykon to zajęcia muzyczne dla dzieci, młodzieży i dorosłych oraz różnorodne warsztaty i
+                            koncerty.
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="school.html" class="app-btn-accent">SPRAWDŹ</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-md function-container app-bg-primary mr-md-5">
-                    <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
-                        <img class="img-fluid" src="./img/record.png" alt="record"/>
+                <div class="col-md">
+                    <div class="function-container app-bg-secondary">
+                        <div class="function-icon d-flex justify-content-center align-items-center app-text-primary">
+                            <img class="img-fluid" src="./img/play.png" alt="play"/>
+                        </div>
+                        <h6 class="function-heading text-center">GRAM</h6>
+                        <div class="function-description text-center">
+                            Muzykon to sale prób, dwie małe i jedna duża.
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="play.html" class="app-btn-accent">SPRAWDŹ</a>
+                        </div>
                     </div>
-                    <h6 class="function-heading text-center">NAGRYWAM</h6>
-                    <div class="function-description text-center my-md-5 my-2">
-                        Muzykon to studio nagrań z profesjonalną reżyserką i świetynmi reżyserami dźwięku.
-                    </div>
-                    <div class="d-flex justify-content-center my-md-5 my-2">
-                        <button class="btn app-btn-accent">SPRAWDŹ</button>
+                </div>
+
+                <div class="col-md">
+                    <div class="function-container app-bg-primary">
+                        <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
+                            <img class="img-fluid" src="./img/record.png" alt="record"/>
+                        </div>
+                        <h6 class="function-heading text-center">NAGRYWAM</h6>
+                        <div class="function-description text-center">
+                            Muzykon to studio nagrań z profesjonalną reżyserką i świetynmi reżyserami dźwięku.
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="record.html" class="app-btn-accent">SPRAWDŹ</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,7 +129,7 @@
         <h1>AKTUALNOŚCI</h1>
         <div class="container">
             <div class="row news-slick-container">
-                <div class="px-3 news-container d-flex flex-column justify-content-center">
+                <div class="news-container d-flex flex-column justify-content-center">
                     <span class="news-date text-center">ŚRODA, 14.09.2019</span>
                     <h6 class="news-heading text-center">LOREM IPSUM</h6>
                     <div class="news-description text-center">
@@ -133,7 +140,7 @@
                     </div>
                 </div>
 
-                <div class="px-3 news-container d-flex flex-column justify-content-center">
+                <div class="news-container d-flex flex-column justify-content-center">
                     <span class="news-date text-center">ŚRODA, 14.09.2019</span>
                     <h6 class="news-heading text-center">LOREM IPSUM</h6>
                     <div class="news-description text-center">
@@ -144,7 +151,7 @@
                     </div>
                 </div>
 
-                <div class="px-3 news-container d-flex flex-column justify-content-center">
+                <div class="news-container d-flex flex-column justify-content-center">
                     <span class="news-date text-center">ŚRODA, 14.09.2019</span>
                     <h6 class="news-heading text-center">LOREM IPSUM</h6>
                     <div class="news-description text-center">
@@ -155,7 +162,7 @@
                     </div>
                 </div>
 
-                <div class="px-3 news-container d-flex flex-column justify-content-center">
+                <div class="news-container d-flex flex-column justify-content-center">
                     <span class="news-date text-center">ŚRODA, 14.09.2019</span>
                     <h6 class="news-heading text-center">LOREM IPSUM</h6>
                     <div class="news-description text-center">
@@ -365,10 +372,10 @@
                 </div>
             </div>
             <div class="row link-container justify-content-center">
-                <a class="mx-1" href="#" target="_blank">
+                <a class="mx-1" href="https://www.facebook.com/pracownia.muzykon" target="_blank">
                     <img src="./img/facebook.png" alt="facebook"/>
                 </a>
-                <a class="mx-1" href="#" target="_blank">
+                <a class="mx-1" href="https://www.instagram.com/pracownia.muzykon/" target="_blank">
                     <img src="./img/instragram.png" alt="instagram"/>
                 </a>
                 <a class="mx-1" href="#" target="_blank">
@@ -385,7 +392,6 @@
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/slick.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script src="js/smooth-scroll.js"></script>
 <script src="js/use-slick.js"></script>
 <script src="js/map.js"></script>

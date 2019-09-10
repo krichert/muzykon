@@ -1,7 +1,7 @@
 $(document).ready(function () {
   const $navMenuItems = $('.nav-menu__list  a');
 
-  $('a[href^="#"]').on('click', function (event) {
+  $('nav a[href^="#"]').on('click', function (event) {
 
     var target = $($(this).attr('href'));
 

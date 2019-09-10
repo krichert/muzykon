@@ -1,0 +1,109 @@
+@import "variables";
+
+// PRICES
+
+#prices {
+	.prices-container {
+		padding: 15px;
+		text-align: center;
+
+		hr {
+			border-top: 1px solid $base-color;
+			width: 80%;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+
+		.price-heading {
+			font-family: $base-font-bold, $secondary-font, sans-serif;
+			font-size: 18px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
+		.price-title{
+			font-family: $base-font-bold, $secondary-font, sans-serif;
+			font-size: 14px;
+			line-height: 24px;
+		}
+
+		.price-subtitle {
+			font-family: $base-font-bold, $secondary-font, sans-serif;
+			font-size: 12px;
+			line-height: 24px;
+		}
+
+		.price-amount {
+			color: $primary-color;
+			font-family: $base-font-bold, $secondary-font, sans-serif;
+			font-size: 16px;
+		}
+
+		.price-amount-small {
+			color: $primary-color;
+			font-family: $secondary-font, sans-serif;
+			font-size: 12px;
+			font-weight: 800;
+		}
+
+		.prices-text {
+			font-family: $secondary-font, sans-serif;
+			font-size: 12px;
+			line-height: 20px;
+		}
+
+		.prices-text-mh {
+			min-height: 140px;
+		}
+
+		.prices-text-row {
+			font-family: $secondary-font, sans-serif;
+			font-size: 14px;
+			line-height: 24px;
+
+			a {
+				color: $accent-color;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	#prices {
+		.prices-container {
+			.prices-text-mh {
+				min-height: 180px;
+			}
+		}
+
+	}
+}
+
+// PLAN
+
+#plan {
+	.plan-container {
+		min-height: 300px;
+	}
+
+	.nav-item {
+		.nav-link {
+			color: $contrast-color;
+
+			&.active {
+				background-color: $accent-color;
+				color: $base-color;
+			}
+		}
+	}
+
+	.table {
+		font-family: $base-font, $secondary-font, sans-serif;
+		background-color: $base-color;
+
+		th {
+			border-bottom: none;
+		}
+	}
+}
+
