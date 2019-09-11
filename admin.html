@@ -1,10 +1,406 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="copyright" content="This page was made by Kamil Richert">
+    <meta content="Kamil Richert" name="author">
+    <meta name="description"
+          content="">
+    <meta name="keywords"
+          content="">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="7 days" name="revisit-after">
+    <meta content="code" name="googlebot">
+    <meta content="" name="DC.title">
+    <meta content="" name="DC.creator">
+    <meta content=""
+          name="DC.subject" lang="pl">
+    <meta content=""
+          name="DC.description" lang="pl">
+    <meta content="" name="DC.publisher">
+    <meta content="" property="og:title">
+    <meta content=""
+          property="og:description">
+    <meta content="" property="og:url">
+    <meta content="" property="og:image">
+    <meta content="index,follow" name="robots">
+    <title>Admin Muzykon</title>
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/subpages.css" rel="stylesheet">
 </head>
 <body>
 
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="subpage-header app-bg-primary">
+                    <div class="subpage-header-image">
+                        ADMIN
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="subpage-heading">ADMIN PANEL</h1>
+
+</header>
+
+<main>
+    <section style="display: none;" id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <form class="form-signin my-5 d-flex align-items-center flex-column">
+                        <label for="inputEmail" class="sr-only">Email</label>
+                        <input type="email" id="inputEmail" class="form-control my-1" placeholder="Email" required=""
+                               autofocus="">
+                        <label for="inputPassword" class="sr-only">Hasło</label>
+                        <input type="password" id="inputPassword" class="form-control my-1" placeholder="Hasło"
+                               required="">
+                        <button id="submitLogin" class="btn app-btn-accent btn-block my-3" type="submit">Zaloguj się
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section style="display: block;" id="panel">
+        <div class="container my-5">
+            <div class="row app-bg-primary">
+                <div class="col">
+                    <h2 class="my-3">AKTUALNOŚCI</h2>
+                    <div class="news-table table-responsive">
+                        <table class="table table-light w-100">
+                            <thead>
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">Tytul</th>
+                                <th scope="col">Tekst</th>
+                                <th scope="col" width="100px" class="text-center">Usuń</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-8 offset-2">
+                        <hr>
+                    </div>
+                    <div class="news-form col-md-6 offset-md-3 mb-3">
+                        <form>
+                            <h3 class="my-3">Dodaj nowy wpis</h3>
+                            <div class="form-group row">
+                                <label for="newsDate" class="col-2 col-form-label">Data</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="newsDate"
+                                           placeholder="ŚRODA, 15.09.2019" required="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="newsTitle" class="col-2 col-form-label">Tytuł</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="newsTitle" placeholder="..."
+                                           required="">
+                                </div>
+                            </div>                            <div class="form-group row">
+                                <label for="newsDescription" class="col-2 col-form-label">Opis</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="newsDescription" placeholder="..."
+                                           required="">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button id="newsSubmit" class="btn btn-primary" type="submit">Dodaj</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row app-bg-primary mt-5">
+                <div class="col">
+                    <h2 class="my-3">HARMONOGRAM</h2>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-6">
+                            <label>Pokazuj dla miesiąca</label>
+                            <div class="row">
+                                <div class="col-md-4 col-5">
+                                    <input type="text" class="form-control" id="timetableFetchYear" placeholder="..."
+                                           required="">
+                                </div>
+                                <div class="col-md-4 col-5">
+                                    <input type="text" class="form-control" id="timetableFetchMonth" placeholder="..."
+                                           required="">
+                                </div>
+                                <div class="col-md-4 col-2">
+                                    <button id="timetableFetchSubmit" class="btn btn-primary btn-block">Uaktualnj</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#concert" role="tab"
+                               aria-controls="concert" aria-selected="true">Sala koncertowa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#room-a" role="tab" aria-controls="room-a"
+                               aria-selected="false">Sala A</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#room-b" role="tab" aria-controls="room-b"
+                               aria-selected="false">Sala B</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="concert" role="tabpanel" aria-labelledby="concert">
+                            <div class="timetable-concert-table table-responsive">
+                                <table class="table table-light w-100">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Czas</th>
+                                        <th scope="col">Najemca</th>
+                                        <th scope="col" width="100px" class="text-center">Usuń</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="room-a" role="tabpanel" aria-labelledby="room-a">
+                            <div class="timetable-room-a-table table-responsive">
+                                <table class="table table-light w-100">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Czas</th>
+                                        <th scope="col">Najemca</th>
+                                        <th scope="col" width="100px" class="text-center">Usuń</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="room-b" role="tabpanel" aria-labelledby="room-b">
+                            <div class="timetable-room-b-table table-responsive">
+                                <table class="table table-light w-100">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Czas</th>
+                                        <th scope="col">Najemca</th>
+                                        <th scope="col" width="100px" class="text-center">Usuń</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 offset-2">
+                        <hr>
+                    </div>
+                    <div class="news-form col-md-6 offset-md-3 mb-3">
+                        <form>
+                            <h3 class="my-3">Dodaj nowy wpis</h3>
+                            <div class="form-group">
+                                <label>Data</label>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <input type="text" class="form-control" id="timetableYear" placeholder="Rok"
+                                               required="">
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" class="form-control" id="timetableMonth"
+                                               placeholder="Miesiąc" required="">
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" class="form-control" id="timetableDay" placeholder="Dzień"
+                                               required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="timetableRentier">Najemca</label>
+                                        <input type="text" class="form-control" id="timetableRentier" placeholder="..."
+                                               required="">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="timeTableRoom">Sala</label>
+                                        <select class="form-control" id="timetableRoom" required="">
+                                            <option value="concert">Sala koncertowa</option>
+                                            <option value="roomA">Sala A</option>
+                                            <option value="roomB">Sala B</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Czas</label>
+                                <div class="row">
+                                    <div class="col-2 text-right pt-2">od</div>
+                                    <div class="col-4">
+                                        <select class="form-control" id="timetableStart" required="">
+                                            <option value="00:00">00:00</option>
+                                            <option value="00:30">00:30</option>
+                                            <option value="01:00">01:00</option>
+                                            <option value="01:30">01:30</option>
+                                            <option value="02:00">02:00</option>
+                                            <option value="02:30">02:30</option>
+                                            <option value="03:00">03:00</option>
+                                            <option value="03:30">03:30</option>
+                                            <option value="04:00">04:00</option>
+                                            <option value="04:30">04:30</option>
+                                            <option value="05:00">05:00</option>
+                                            <option value="05:30">05:30</option>
+                                            <option value="06:00">06:00</option>
+                                            <option value="06:30">06:30</option>
+                                            <option value="07:00">07:00</option>
+                                            <option value="07:30">07:30</option>
+                                            <option value="08:00">08:00</option>
+                                            <option value="08:30">08:30</option>
+                                            <option value="09:00">09:00</option>
+                                            <option value="09:30">09:30</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="10:30">10:30</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="11:30">11:30</option>
+                                            <option value="12:00">13:00</option>
+                                            <option value="12:30">13:30</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="13:30">13:30</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="14:30">14:30</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="15:30">15:30</option>
+                                            <option value="16:00">16:00</option>
+                                            <option value="16:30">16:30</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="17:30">17:30</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="18:30">18:30</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="19:30">19:30</option>
+                                            <option value="20:00">20:00</option>
+                                            <option value="20:30">20:30</option>
+                                            <option value="21:00">21:00</option>
+                                            <option value="21:30">21:30</option>
+                                            <option value="22:00">22:00</option>
+                                            <option value="22:30">22:30</option>
+                                            <option value="23:00">23:00</option>
+                                            <option value="23:30">23:30</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-2 text-right pt-2">do</div>
+                                    <div class="col-4">
+                                        <select class="form-control" id="timetableEnd" required="">
+                                            <option value="00:00">00:00</option>
+                                            <option value="00:30">00:30</option>
+                                            <option value="01:00">01:00</option>
+                                            <option value="01:30">01:30</option>
+                                            <option value="02:00">02:00</option>
+                                            <option value="02:30">02:30</option>
+                                            <option value="03:00">03:00</option>
+                                            <option value="03:30">03:30</option>
+                                            <option value="04:00">04:00</option>
+                                            <option value="04:30">04:30</option>
+                                            <option value="05:00">05:00</option>
+                                            <option value="05:30">05:30</option>
+                                            <option value="06:00">06:00</option>
+                                            <option value="06:30">06:30</option>
+                                            <option value="07:00">07:00</option>
+                                            <option value="07:30">07:30</option>
+                                            <option value="08:00">08:00</option>
+                                            <option value="08:30">08:30</option>
+                                            <option value="09:00">09:00</option>
+                                            <option value="09:30">09:30</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="10:30">10:30</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="11:30">11:30</option>
+                                            <option value="12:00">13:00</option>
+                                            <option value="12:30">13:30</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="13:30">13:30</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="14:30">14:30</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="15:30">15:30</option>
+                                            <option value="16:00">16:00</option>
+                                            <option value="16:30">16:30</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="17:30">17:30</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="18:30">18:30</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="19:30">19:30</option>
+                                            <option value="20:00">20:00</option>
+                                            <option value="20:30">20:30</option>
+                                            <option value="21:00">21:00</option>
+                                            <option value="21:30">21:30</option>
+                                            <option value="22:00">22:00</option>
+                                            <option value="22:30">22:30</option>
+                                            <option value="23:00">23:00</option>
+                                            <option value="23:30">23:30</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button id="timetableSubmit" class="btn btn-primary" type="submit">Dodaj</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <a id="signOut" class="d-block app-btn-accent">Wyloguj się</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <small><a href="index.html" class="app-back-link">< POWRÓT DO STRONY GŁÓWNEJ</a></small>
+            </div>
+            <div class="row link-container justify-content-center">
+                <a class="mx-1" href="https://www.facebook.com/pracownia.muzykon" target="_blank">
+                    <img src="./img/facebook.png" alt="facebook"/>
+                </a>
+                <a class="mx-1" href="https://www.instagram.com/pracownia.muzykon/" target="_blank">
+                    <img src="./img/instragram.png" alt="instagram"/>
+                </a>
+                <a class="mx-1" href="#" target="_blank">
+                    <img src="./img/youtube.png" alt="youtube"/>
+                </a>
+            </div>
+            <small class="text-center d-block mb-3">Muzyczna Przestrzeń Artystyczna <strong>Muykon 2019 ©</strong>
+            </small>
+        </div>
+    </footer>
+</main>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase.js"></script>
+<script src="js/firebase.config.js"></script>
+<script src="js/admin-auth.js"></script>
+<script src="js/admin.js"></script>
 </body>
 </html>
