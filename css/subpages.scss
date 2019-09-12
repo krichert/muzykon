@@ -1,8 +1,48 @@
 @import "variables";
 
+// SUBPAGE HEADER
+
+header {
+	.subpage-header {
+		height: 60px;
+		position: relative;
+		padding: 15px;
+
+		.subpage-header-image {
+			position: absolute;
+			height: 85px;
+			width: 85px;
+			border-radius: 50%;
+			background-color: $secondary-color;
+			bottom: -42.5px;
+			left: calc(50% - 42.5px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	h1.subpage-heading {
+		font-family: $base-font-bold, $secondary-font, sans-serif;
+		font-size: 24px;
+		text-align: center;
+		margin-top: 60px;
+	}
+
+	p.subpage-description {
+		font-family: $secondary-font, sans-serif;
+		font-size: 12px;
+		text-align: center;
+		margin-top: 45px;
+		color: $contrast-color;
+	}
+}
+
 // PRICES
 
 #prices {
+	margin-top: 45px;
+
 	.prices-container {
 		padding: 15px;
 		text-align: center;
@@ -107,3 +147,34 @@
 	}
 }
 
+// ADMIN PANEL
+
+#panel {
+	h2 {
+		font-family: $base-font, $secondary-font, sans-serif;
+		font-size: 20px;
+		text-align: center;
+	}
+
+	form {
+		h3 {
+			font-family: $base-font, $secondary-font, sans-serif;
+			font-size: 16px;
+			text-align: center;
+		}
+	}
+
+	hr {
+		border-top: 1px solid $base-color;
+	}
+
+	.nav-link {
+		color: $contrast-color
+	}
+
+	.table {
+		td {
+			vertical-align: middle;
+		}
+	}
+}

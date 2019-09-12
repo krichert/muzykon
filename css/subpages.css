@@ -1,0 +1,104 @@
+header .subpage-header {
+  height: 60px;
+  position: relative;
+  padding: 15px; }
+  header .subpage-header .subpage-header-image {
+    position: absolute;
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    background-color: #F0CACB;
+    bottom: -42.5px;
+    left: calc(50% - 42.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+header h1.subpage-heading {
+  font-family: "Effra-Bold", "Open Sans", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 60px; }
+header p.subpage-description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 45px;
+  color: #414142; }
+
+#prices {
+  margin-top: 45px; }
+  #prices .prices-container {
+    padding: 15px;
+    text-align: center; }
+    #prices .prices-container hr {
+      border-top: 1px solid #FFFFFF;
+      width: 80%;
+      margin-top: 25px;
+      margin-bottom: 25px; }
+    #prices .prices-container .price-heading {
+      font-family: "Effra-Bold", "Open Sans", sans-serif;
+      font-size: 18px;
+      margin-top: 30px;
+      margin-bottom: 30px; }
+    #prices .prices-container .price-title {
+      font-family: "Effra-Bold", "Open Sans", sans-serif;
+      font-size: 14px;
+      line-height: 24px; }
+    #prices .prices-container .price-subtitle {
+      font-family: "Effra-Bold", "Open Sans", sans-serif;
+      font-size: 12px;
+      line-height: 24px; }
+    #prices .prices-container .price-amount {
+      color: #F5B698;
+      font-family: "Effra-Bold", "Open Sans", sans-serif;
+      font-size: 16px; }
+    #prices .prices-container .price-amount-small {
+      color: #F5B698;
+      font-family: "Open Sans", sans-serif;
+      font-size: 12px;
+      font-weight: 800; }
+    #prices .prices-container .prices-text {
+      font-family: "Open Sans", sans-serif;
+      font-size: 12px;
+      line-height: 20px; }
+    #prices .prices-container .prices-text-mh {
+      min-height: 140px; }
+    #prices .prices-container .prices-text-row {
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      line-height: 24px; }
+      #prices .prices-container .prices-text-row a {
+        color: #2363AE; }
+
+@media screen and (max-width: 1200px) {
+  #prices .prices-container .prices-text-mh {
+    min-height: 180px; } }
+#plan .plan-container {
+  min-height: 300px; }
+#plan .nav-item .nav-link {
+  color: #414142; }
+  #plan .nav-item .nav-link.active {
+    background-color: #2363AE;
+    color: #FFFFFF; }
+#plan .table {
+  font-family: "Effra", "Open Sans", sans-serif;
+  background-color: #FFFFFF; }
+  #plan .table th {
+    border-bottom: none; }
+
+#panel h2 {
+  font-family: "Effra", "Open Sans", sans-serif;
+  font-size: 20px;
+  text-align: center; }
+#panel form h3 {
+  font-family: "Effra", "Open Sans", sans-serif;
+  font-size: 16px;
+  text-align: center; }
+#panel hr {
+  border-top: 1px solid #FFFFFF; }
+#panel .nav-link {
+  color: #414142; }
+#panel .table td {
+  vertical-align: middle; }
+
+/*# sourceMappingURL=subpages.css.map */
