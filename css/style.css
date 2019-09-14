@@ -71,7 +71,8 @@ section h1 {
   padding: 10px 0;
   text-align: center;
   margin-top: 45px;
-  margin-bottom: 45px; }
+  margin-bottom: 45px;
+  cursor: pointer; }
   .app-btn-accent:hover {
     text-decoration: none; }
 
@@ -89,9 +90,6 @@ section h1 {
   font-family: "Effra-Bold", "Open Sans", sans-serif;
   font-size: 10px;
   color: #2363AE; }
-
-.news-slick-container, .crew-slick-container {
-  padding: 0 65px; }
 
 header .app-nav-trigger {
   display: none; }

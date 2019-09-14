@@ -34,6 +34,8 @@
     <link href="./css/slick-theme.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/subpages.css" rel="stylesheet">
+    <link href='./fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='./fullcalendar/timegrid/main.css' rel='stylesheet' />
 </head>
 <body>
 
@@ -61,7 +63,7 @@
             <div class="col-md-4 offset-md-4">
                 <div class="subpage-header app-bg-primary">
                     <div class="subpage-header-image">
-                        <img class="img-fluid" src="./img/play.png" alt="learn"/>
+                        <img class="img-fluid" src="./img/play.png" alt="learn" width="37" height="29" />
                     </div>
                 </div>
             </div>
@@ -108,7 +110,31 @@
 
     <section id="timetable">
         <h1>HARMONOGRAM</h1>
-
+        <div class="container">
+            <div class="row">
+                <div class="col p-3 d-flex justify-content-center">
+                    <form id="room-form" class="form-inline">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="room" id="concert" value="concert" checked>
+                            <label class="form-check-label" for="concert">Sala koncertowa</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="room" id="roomA" value="roomA">
+                            <label class="form-check-label" for="roomA">Sala A</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="room" id="roomB" value="roomB">
+                            <label class="form-check-label" for="roomB">Sala B</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col">
+                    <div id="calendar" class="p-3"></div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -139,9 +165,13 @@
 </main>
 
 <script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/slick.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase.js"></script>
+<script src="js/firebase.config.js"></script>
+<script src="fullcalendar/core/locales/pl.js"></script>
+<script src='fullcalendar/core/main.js'></script>
+<script src='fullcalendar/daygrid/main.js'></script>
+<script src='fullcalendar/timegrid/main.js'></script>
+<script src="js/calendar.js"></script>
 <script src="js/smooth-scroll.js"></script>
-<script src="js/use-slick.js"></script>
 </body>
 </html>

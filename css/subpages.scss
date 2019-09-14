@@ -31,7 +31,8 @@ header {
 
 	p.subpage-description {
 		font-family: $secondary-font, sans-serif;
-		font-size: 12px;
+		font-size: 14px;
+		line-height: 24px;
 		text-align: center;
 		margin-top: 45px;
 		color: $contrast-color;
@@ -122,27 +123,97 @@ header {
 // PLAN
 
 #plan {
+	.plan-nav {
+		width: 100%;
+		li {
+			a {
+				text-align: center;
+			}
+
+		}
+	}
+
 	.plan-container {
 		min-height: 300px;
 	}
 
 	.nav-item {
+		&:nth-child(even) a.nav-link {
+			background-color: $secondary-color-muted;
+		}
+
+		&:nth-child(odd) a.nav-link {
+			background-color: $primary-color-muted;
+		}
+
 		.nav-link {
-			color: $contrast-color;
+			color: $base-color;
+			line-height: 20px;
+			padding: 15px 0;
+
+			&:nth-child(2) {
+
+			}
 
 			&.active {
-				background-color: $accent-color;
+				background-color: $primary-color !important;
+				text-decoration: underline;
+
 				color: $base-color;
+			}
+
+			&.active:after {
+				content: '';
+				width: 100%;
+				height: 10px;
+				top: -10px;
+				left: 0;
+				background-color: $primary-color;
+				position: absolute;
 			}
 		}
 	}
 
 	.table {
+		margin-top: 20px;
 		font-family: $base-font, $secondary-font, sans-serif;
-		background-color: $base-color;
+		background-color: $primary-color;
+
+		th,td {
+			border: none;
+			color: $accent-color;
+			text-align: center;
+			padding: 15px 0;
+		}
 
 		th {
-			border-bottom: none;
+			text-transform: uppercase;
+			font-size: 10px;
+			letter-spacing: 2px;
+		}
+
+		tr:nth-child(odd) {
+			background-color: $tertiary-color;
+		}
+
+		tr:nth-child(even) {
+			background-color: $secondary-color-muted;
+		}
+
+		thead tr {
+			background-color: transparent !important;
+		}
+
+		tbody td:first-child, tbody td:last-child {
+			font-weight: 800;
+		}
+
+		thead th:first-child {
+			width: 180px;
+		}
+
+		thead th:last-child {
+			width: 120px;
 		}
 	}
 }
@@ -176,5 +247,17 @@ header {
 		td {
 			vertical-align: middle;
 		}
+	}
+}
+
+// TIMETABLE
+
+#timetable {
+	.container {
+		background-color: $primary-color;
+	}
+
+	#calendar {
+		background-color: $base-color;
 	}
 }
