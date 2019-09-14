@@ -31,6 +31,8 @@ $(document).ready(function () {
                 container.appendChild(description);
 
                 newsContainer.append(container);
-            })
+            });
+
+            useSlickForNews();
         });
 });

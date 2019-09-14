@@ -100,6 +100,7 @@ section {
 	text-align: center;
 	margin-top: 45px;
 	margin-bottom: 45px;
+	cursor: pointer;
 
 	&:hover {
 		text-decoration: none;
@@ -123,10 +124,6 @@ section {
 	font-family: $base-font-bold, $secondary-font, sans-serif;
 	font-size: 10px;
 	color: $accent-color;
-}
-
-.news-slick-container, .crew-slick-container {
-	padding: 0 65px;
 }
 
 // HEADER

@@ -20,7 +20,8 @@ header h1.subpage-heading {
   margin-top: 60px; }
 header p.subpage-description {
   font-family: "Open Sans", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 24px;
   text-align: center;
   margin-top: 45px;
   color: #414142; }
@@ -73,18 +74,57 @@ header p.subpage-description {
 @media screen and (max-width: 1200px) {
   #prices .prices-container .prices-text-mh {
     min-height: 180px; } }
+#plan .plan-nav {
+  width: 100%; }
+  #plan .plan-nav li a {
+    text-align: center; }
 #plan .plan-container {
   min-height: 300px; }
+#plan .nav-item:nth-child(even) a.nav-link {
+  background-color: #F3D6C8; }
+#plan .nav-item:nth-child(odd) a.nav-link {
+  background-color: #F4CCBA; }
 #plan .nav-item .nav-link {
-  color: #414142; }
+  color: #FFFFFF;
+  line-height: 20px;
+  padding: 15px 0; }
   #plan .nav-item .nav-link.active {
-    background-color: #2363AE;
+    background-color: #F5B698 !important;
+    text-decoration: underline;
     color: #FFFFFF; }
+  #plan .nav-item .nav-link.active:after {
+    content: '';
+    width: 100%;
+    height: 10px;
+    top: -10px;
+    left: 0;
+    background-color: #F5B698;
+    position: absolute; }
 #plan .table {
+  margin-top: 20px;
   font-family: "Effra", "Open Sans", sans-serif;
-  background-color: #FFFFFF; }
+  background-color: #F5B698; }
+  #plan .table th, #plan .table td {
+    border: none;
+    color: #2363AE;
+    text-align: center;
+    padding: 15px 0; }
   #plan .table th {
-    border-bottom: none; }
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px; }
+  #plan .table tr:nth-child(odd) {
+    background-color: #FDEFE8; }
+  #plan .table tr:nth-child(even) {
+    background-color: #F3D6C8; }
+  #plan .table thead tr {
+    background-color: transparent !important; }
+  #plan .table tbody td:first-child, #plan .table tbody td:last-child {
+    font-weight: 800; }
+  #plan .table thead th:first-child {
+    width: 180px; }
+  #plan .table thead th:last-child {
+    width: 120px; }
 
 #panel h2 {
   font-family: "Effra", "Open Sans", sans-serif;
@@ -100,5 +140,10 @@ header p.subpage-description {
   color: #414142; }
 #panel .table td {
   vertical-align: middle; }
+
+#timetable .container {
+  background-color: #F5B698; }
+#timetable #calendar {
+  background-color: #FFFFFF; }
 
 /*# sourceMappingURL=subpages.css.map */
