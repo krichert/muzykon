@@ -45,7 +45,7 @@ header {
 	margin-top: 45px;
 
 	.prices-container {
-		padding: 15px;
+		padding: 15px 30px;
 		text-align: center;
 
 		hr {
@@ -61,6 +61,8 @@ header {
 			margin-top: 30px;
 			margin-bottom: 30px;
 		}
+
+
 
 		.price-title{
 			font-family: $base-font-bold, $secondary-font, sans-serif;
@@ -93,18 +95,24 @@ header {
 			line-height: 20px;
 		}
 
-		.prices-text-mh {
-			min-height: 140px;
+		.prices-text-mh--play {
+			min-height: 80px;
 		}
 
-		.prices-text-row {
-			font-family: $secondary-font, sans-serif;
-			font-size: 14px;
-			line-height: 24px;
+		.prices-text-mh {
+			min-height: 160px;
+		}
+	}
 
-			a {
-				color: $accent-color;
-			}
+	.prices-text-row {
+		font-family: $secondary-font, sans-serif;
+		font-size: 14px;
+		line-height: 24px;
+
+		a {
+			color: $accent-color;
+			font-family: $base-font-bold, $base-color, sans-serif;
+			text-decoration: underline;
 		}
 	}
 }
@@ -113,10 +121,46 @@ header {
 	#prices {
 		.prices-container {
 			.prices-text-mh {
-				min-height: 180px;
+				min-height: 200px;
 			}
 		}
 
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#prices {
+		.prices-container {
+			.prices-heading-mh--play {
+				min-height: 42px;
+			}
+
+			.prices-text-mh--play {
+				min-height: 100px;
+			}
+
+			.prices-text-mh {
+				min-height: 320px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#prices {
+		.prices-container {
+			.prices-heading-mh--play {
+				min-height: unset;
+			}
+
+			.prices-text-mh--play {
+				min-height: unset;
+			}
+
+			.prices-text-mh {
+				min-height: unset;
+			}
+		}
 	}
 }
 
@@ -150,10 +194,6 @@ header {
 			color: $base-color;
 			line-height: 20px;
 			padding: 15px 0;
-
-			&:nth-child(2) {
-
-			}
 
 			&.active {
 				background-color: $primary-color !important;
@@ -253,11 +293,143 @@ header {
 // TIMETABLE
 
 #timetable {
-	.container {
-		background-color: $primary-color;
+	#calendar.fc {
+		td, th {
+			border: none;
+			color: $accent-color;
+		}
+
+		th {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+
+		tbody {
+			tr  {
+				background-color: $secondary-color-muted;
+			}
+
+			tr:nth-child(4n + 1), tr:nth-child(4n + 2) {
+				background-color: $tertiary-color;
+			}
+		}
 	}
 
 	#calendar {
-		background-color: $base-color;
+		background-color: $primary-color;
+		position: relative;
+
+		.fc-right {
+			position: absolute;
+			bottom: -50px;
+			left: calc(50% - 80px);
+
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+
+			.fc-prev-button, .fc-next-button {
+				background-color: transparent;
+				border: none;
+				transition: transform 1s;
+
+				&:focus {
+					box-shadow: none;
+				}
+
+				&:hover {
+					transform: scale(1.2);
+				}
+				
+				span {
+					color: $primary-color;
+				}
+			}
+
+			.fc-today-button {
+				text-decoration: underline;
+				text-transform: uppercase;
+				color: $accent-color;
+				background-color: transparent;
+				border: none;
+			}
+		}
+
+
+		table {
+			font-family: $base-font, $secondary-font, sans-serif;
+			border-color: transparent;
+
+			thead {
+				border-color: transparent;
+
+				th {
+					color: $accent-color;
+					text-transform: uppercase;
+					font-size: 10px;
+					letter-spacing: 2px;
+				}
+
+				th:nth-child(2n) {
+					background-color: $primary-color-muted;
+				}
+			}
+		}
+	}
+
+	.plan-nav {
+		width: 100%;
+		li {
+			a {
+				text-align: center;
+			}
+
+		}
+	}
+
+	.plan-container {
+		min-height: 300px;
+	}
+
+	#room-form {
+		input {
+			display: none;
+		}
+
+		label {
+			cursor: pointer;
+			padding: 15px 30px;
+			color: $base-color;
+			line-height: 20px;
+		}
+
+		.form-check {
+			margin: 0;
+
+			&:nth-child(even) label {
+				background-color: $secondary-color-muted;
+			}
+
+			&:nth-child(odd) label {
+				background-color: $primary-color-muted;
+			}
+		}
+
+	    input:checked ~ label {
+			background-color: $primary-color !important;
+			text-decoration: underline;
+
+			color: $base-color;
+		}
+
+		input:checked ~ label:after {
+				content: '';
+				width: 100%;
+				height: 10px;
+				top: -10px;
+				left: 0;
+				background-color: $primary-color;
+				position: absolute;
+		}
 	}
 }

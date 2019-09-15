@@ -37,7 +37,7 @@
 </head>
 <body>
 
-<header>
+<header class="main-header">
     <input type="checkbox" class="app-nav-trigger" id="nav">
     <label class="app-nav-trigger-label" for="nav">
         <span class="app-nav-icon">
@@ -49,7 +49,7 @@
 
     <nav class="app-nav d-flex flex-column justify-content-center align-items-center">
         <div class="app-nav-menu-content d-flex flex-column">
-            <a href="school.html">UCZE SIĘ</a>
+            <a href="school.html">UCZĘ SIĘ</a>
             <a href="play.html">GRAM</a>
             <a href="record.html">NAGRYWAM</a>
             <a href="#news">AKTUALNOŚCI</a>
@@ -61,12 +61,15 @@
 
     <div class="container-fluid mh-100 p-0">
         <div class="row no-gutters">
-            <div class="col-8">
-                <img class="img-fluid" src="./img/hero.png" alt="hero"/>
+            <div class="col-md-8 order-1 order-md-0">
+                <img id="hero-img" class="img-fluid w-100"" src="./img/hero.png" alt="hero"/>
             </div>
-            <div class="col-3 align-self-end">
+            <div class="col-md-3 align-self-md-end m-5 m-md-0">
                 <img class="img-fluid" src="./img/logo.png" alt="logo"/>
             </div>
+        </div>
+        <div class="row d-none mobile-arrow-down">
+            <span> > </span>
         </div>
     </div>
 
@@ -81,12 +84,10 @@
                         <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
                             <img class="img-fluid" src="./img/learn.png" alt="learn"/>
                         </div>
-                        <h6 class="function-heading text-center">UCZE SIĘ</h6>
-                        <div class="col-md-10 offset-md-1">
-                            <div class="function-description text-center">
-                                Muzykon to zajęcia muzyczne dla dzieci, młodzieży i dorosłych oraz różnorodne warsztaty i
-                                koncerty.
-                            </div>
+                        <h6 class="function-heading text-center">UCZĘ SIĘ</h6>
+                        <div class="function-description text-center">
+                            Muzykon to zajęcia muzyczne dla dzieci, młodzieży i dorosłych oraz różnorodne warsztaty i
+                            koncerty.
                         </div>
                         <div class="d-flex justify-content-center">
                             <a href="school.html" class="app-btn-accent">SPRAWDŹ</a>
@@ -100,10 +101,8 @@
                             <img class="img-fluid" src="./img/play.png" alt="play"/>
                         </div>
                         <h6 class="function-heading text-center">GRAM</h6>
-                        <div class="col-md-10 offset-md-1">
-                            <div class="function-description text-center">
-                                Muzykon to sale prób, dwie małe i jedna duża.
-                            </div>
+                        <div class="function-description text-center">
+                            Muzykon to sale prób, dwie małe i jedna duża.
                         </div>
                         <div class="d-flex justify-content-center">
                             <a href="play.html" class="app-btn-accent">SPRAWDŹ</a>
@@ -117,10 +116,8 @@
                             <img class="img-fluid" src="./img/record.png" alt="record"/>
                         </div>
                         <h6 class="function-heading text-center">NAGRYWAM</h6>
-                        <div class="col-md-10 offset-md-1">
-                            <div class="function-description text-center">
-                                Muzykon to studio nagrań z profesjonalną reżyserką i świetynmi reżyserami dźwięku.
-                            </div>
+                        <div class="function-description text-center">
+                            Muzykon to studio nagrań z profesjonalną reżyserką i świetynmi reżyserami dźwięku.
                         </div>
                         <div class="d-flex justify-content-center">
                             <a href="record.html" class="app-btn-accent">SPRAWDŹ</a>
@@ -193,7 +190,7 @@
                             i aranżer. Posiada dwa dyplomy magisterskie z klasyki i jazzu, ale się tym nie chwali. Jego
                             marzeniem jest grać świetną muzykę ze świetnymi muzykami, a już w swoim dorobku miał taką
                             okazję (m.in. brał udział w nagraniu albumu Maciej Sikała Septet: “Life in Klub ŻAK”).
-                            Muzykon to jego kolejne marzenie - miejsce, gdzie nie przestaje grać muzyka i wszyscy w niej
+                            Muzykon to jego kolejne marzenie -miejsce, gdzie nie przestaje grać muzyka i wszyscy w niej
                             żyją.
                         </div>
                     </div>
@@ -204,8 +201,11 @@
                         </div>
                         <h6 class="crew-heading text-center">Sonia Duzdal-Klepczyńska</h6>
                         <div class="crew-description text-center">
-                            pianistka, realizator dźwięku, założycielka Muzykonu. Ukończyła Akademię Muzyczną w Gdańsku
-                            i warszawski AFiT.
+                            pianistka, realizatordźwięku, założycielka Muzykonu. Ukończyła klasę fortepianu Akademii
+                            Muzycznej w Gdańsku i warszawską Akademię Filmu i Telewizji. Od wielu lat prowadzi zajęcia
+                            gry na pianinie i bierze udział w różnych projektach realizatorskich (od planu filmowego po
+                            nagrywanie orkiestry symfonicznej). Jej idolem jest Krystian Zimerman. Kocha dobrą muzykę
+                            każdego gatunku, książki i filmy.
                         </div>
                     </div>
 
@@ -217,7 +217,7 @@
                         <div class="crew-description text-center">
                             z zawodu muzyk, mgr skrzypiec, ukończyła Akademię Sztuki w Szczecinie. Zajmuje się
                             działalnością pedagogiczną, pracuje w Państwowej Szkole Muzycznej w Gdańsku. Angażuje się
-                            także w liczne projekty muzyczne - orkiestrowe i zespołowe. Jest otwarta na różne style
+                            także w liczne projekty muzyczne -orkiestrowe i zespołowe. Jest otwarta na różne style
                             muzyczne od klasyki po muzykę rockową.
                         </div>
                     </div>
@@ -265,16 +265,13 @@
                     <span class="contact-text">ul. Słowackiego 37 <br/> Gdańsk Wrzeszcz</span>
                     <small><i>(obok Garnizonu)</i></small>
 
-                    <h3 class="contact-heading">REZERWACJE</h3>
-                    <span class="contact-text"><a href="mailto:rezerwacja@muzykon.pl">rezerwacja@muzykon.pl</a></span>
-
-                    <h3 class="contact-heading">INFORMACJE</h3>
-                    <span class="contact-text"><a href="mailto:info@muzykon.pl">info@muzykon.pl</a></span>
+                    <h3 class="contact-heading">EMAIL</h3>
+                    <span class="contact-text"><a href="mailto:rezerwacja@muzykon.pl">kontakt@muzykon.pl</a></span>
 
                     <hr>
 
                     <h3 class="contact-heading mt-0">PRZELEWY</h3>
-                    <span class="contact-text">1233 4872 4872 6498 2749 8212 <br/> Lorem Ipsum Bank1</span>
+                    <span class="contact-text">44 1910 1048 2267 0001 7996 0001 <br/> Santander Bank Polska S.A.</span>
 
                     <hr>
                 </div>
@@ -335,6 +332,7 @@
 <script src="js/smooth-scroll.js"></script>
 <script src="js/slick.js"></script>
 <script src="js/use-slick.js"></script>
+<script src="js/change-hero.js"></script>
 <script src="js/map.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUwTyrDgL20F_jcNEF-Dgb8k2C2cIIcGs&callback=initMap"></script>

@@ -4,6 +4,25 @@
 	padding: 0 65px;
 }
 
+@media screen and (max-width: 768px) {
+	.main-header {
+		min-height: 100vh;
+	}
+
+	.mobile-arrow-down {
+		transform: rotate(90deg);
+		display: block !important;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+
+		span {
+			color: $primary-color;
+			font-size: 30px;
+		}
+	}
+}
+
 // FUNCTION
 
 #functions {
@@ -14,6 +33,14 @@
 		position: relative;
 		color: $base-color;
 
+		&:hover .function-icon {
+			transform: scale(1.2);
+		}
+
+		&:hover .function-icon img {
+			animation: swing ease-in-out 3s infinite;
+		}
+
 		.function-icon {
 			position: absolute;
 			left: calc(50% - 80px);
@@ -22,6 +49,7 @@
 			height: 160px;
 			border-radius: 50%;
 			background-color: $primary-color;
+			transition: transform 1s;
 		}
 
 		.function-heading {
@@ -35,12 +63,12 @@
 			font-size: 14px;
 			line-height: 24px;
 			min-height: 100px;
-			padding: 15px 0;
+			padding: 15px 15px;
 		}
 	}
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
 	#functions {
 		.function-container {
 			.function-description {
@@ -68,7 +96,7 @@
 	margin-bottom: 110px;
 
 	.news-container {
-		padding: 0 15px;
+		padding: 0 30px;
 	}
 
 	.news-date {
@@ -110,7 +138,7 @@
 	.crew-container {
 		position: relative;
 		color: $base-color;
-		padding: 0 15px;
+		padding: 0 30px;
 
 		.crew-heading {
 			font-family: $base-font-bold, $secondary-font, sans-serif;
@@ -148,7 +176,6 @@
 	}
 
 	.gallery-img-container {
-		background-color: $accent-color;
 		padding: 15px;
 		margin: 0 15px;
 		min-height: 150px;

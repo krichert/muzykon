@@ -32,10 +32,10 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/slick.css" rel="stylesheet">
     <link href="./css/slick-theme.css" rel="stylesheet">
+    <link href='./fullcalendar/core/main.css' rel='stylesheet'/>
+    <link href='./fullcalendar/timegrid/main.css' rel='stylesheet'/>
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/subpages.css" rel="stylesheet">
-    <link href='./fullcalendar/core/main.css' rel='stylesheet' />
-    <link href='./fullcalendar/timegrid/main.css' rel='stylesheet' />
 </head>
 <body>
 
@@ -63,20 +63,22 @@
             <div class="col-md-4 offset-md-4">
                 <div class="subpage-header app-bg-primary">
                     <div class="subpage-header-image">
-                        <img class="img-fluid" src="./img/play.png" alt="learn" width="37" height="29" />
+                        <img class="img-fluid" src="./img/play.png" alt="learn" width="37" height="29"/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <h1 class="subpage-heading">SALE PRÓB / ĆWICZENIÓWKI</h1>
+    <h1 class="subpage-heading">ZAREZERWUJ</h1>
 
     <div class="container">
         <div class="row">
-            <div class="col-6 offset-3">
-                <p class="subpage-description">Nie możesz ćwiczyć w domu, ponieważ sąsiedzi walą w rury lub puszczają disco polo na
-                    cały regulator? Rozwiązaniem są nasze salki prób! Dwie małe sale do ćwieczenia indywidualnego oraz jedna duża
+            <div class="col-md-6 offset-md-3">
+                <p class="subpage-description">Nie możesz ćwiczyć w domu, ponieważ sąsiedzi walą w rury lub puszczają
+                    disco polo na
+                    cały regulator? Rozwiązaniem są nasze salki prób! Dwie małe sale do ćwieczenia indywidualnego oraz
+                    jedna duża
                     sala, w której mogą odbywać się próby zespołu.</p>
             </div>
         </div>
@@ -89,20 +91,38 @@
     <section id="prices">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="prices-container app-bg-accent app-text-base h-100">
-                        <h2 class="price-heading">SALA KONCERTOWA</h2>
+                <div class="col-md-4 mt-5 mt-md-0">
+                    <div class="prices-container app-bg-accent app-text-base h-100 d-flex flex-column align-items-center">
+                        <h2 class="price-heading prices-heading-mh--play">SALA KONCERTOWA</h2>
+                        <p class="prices-text prices-text-mh--play">Ponad 50 m<sub>2</sub> przestrzeni, w której możesz zrobić
+                            próbę zespołu , zorganizować warsztaty, a nawet koncert.</p>
+                        <hr>
+                        <span class="price-amount">50 zł/godz.</span>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="prices-container app-bg-accent-second app-text-base h-100">
-                        <h2 class="price-heading">SALA LEKCYJNA A</h2>
+                <div class="col-md-4 mt-5 mt-md-0">
+                    <div class="prices-container app-bg-accent-second app-text-base h-100 d-flex flex-column align-items-center">
+                        <h2 class="price-heading prices-heading-mh--play">SALA A</h2>
+                        <p class="prices-text prices-text-mh--play">Mała sala idealna do ćwiczenia indywidualnego, duetów lub
+                            trio. W niej pograsz też na pianinie cyfrowym.</p>
+                        <hr>
+                        <span class="price-amount">20 zł/godz.</span>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="prices-container app-bg-accent app-text-base h-100">
-                        <h2 class="price-heading">SALA LEKCYJNA B</h2>
+                <div class="col-md-4 mt-5 mt-md-0">
+                    <div class="prices-container app-bg-accent app-text-base h-100 d-flex flex-column align-items-center">
+                        <h2 class="price-heading prices-heading-mh--play">SALA B</h2>
+                        <p class="prices-text prices-text-mh--play">Mała przytulna salka do ćwiczenia indywidualnego lub w duecie.</p>
+                        <hr>
+                        <span class="price-amount">15 zł/godz.</span>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="prices-text-row text-center mt-5">
+                        Informacje o aktualnych promocjach znajdziesz w <a href="index.html#news">AKTUALNOŚCIACH</a>!
+                    </p>
                 </div>
             </div>
         </div>
@@ -112,10 +132,11 @@
         <h1>HARMONOGRAM</h1>
         <div class="container">
             <div class="row">
-                <div class="col p-3 d-flex justify-content-center">
+                <div class="d-flex justify-content-start">
                     <form id="room-form" class="form-inline">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="room" id="concert" value="concert" checked>
+                            <input class="form-check-input" type="radio" name="room" id="concert" value="concert"
+                                   checked>
                             <label class="form-check-label" for="concert">Sala koncertowa</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -129,15 +150,13 @@
                     </form>
                 </div>
             </div>
-            <div class="row p-3">
-                <div class="col">
-                    <div id="calendar" class="p-3"></div>
-                </div>
+            <div class="row">
+                <div id="calendar"></div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer class="mt-5">
         <div class="container">
             <div class="d-flex justify-content-center">
                 <a href="index.html#contact" class="d-block app-btn-accent">ZAPISZ SIĘ</a>

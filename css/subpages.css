@@ -29,7 +29,7 @@ header p.subpage-description {
 #prices {
   margin-top: 45px; }
   #prices .prices-container {
-    padding: 15px;
+    padding: 15px 30px;
     text-align: center; }
     #prices .prices-container hr {
       border-top: 1px solid #FFFFFF;
@@ -62,18 +62,36 @@ header p.subpage-description {
       font-family: "Open Sans", sans-serif;
       font-size: 12px;
       line-height: 20px; }
+    #prices .prices-container .prices-text-mh--play {
+      min-height: 80px; }
     #prices .prices-container .prices-text-mh {
-      min-height: 140px; }
-    #prices .prices-container .prices-text-row {
-      font-family: "Open Sans", sans-serif;
-      font-size: 14px;
-      line-height: 24px; }
-      #prices .prices-container .prices-text-row a {
-        color: #2363AE; }
+      min-height: 160px; }
+  #prices .prices-text-row {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 24px; }
+    #prices .prices-text-row a {
+      color: #2363AE;
+      font-family: "Effra-Bold", #FFFFFF, sans-serif;
+      text-decoration: underline; }
 
 @media screen and (max-width: 1200px) {
   #prices .prices-container .prices-text-mh {
-    min-height: 180px; } }
+    min-height: 200px; } }
+@media screen and (max-width: 992px) {
+  #prices .prices-container .prices-heading-mh--play {
+    min-height: 42px; }
+  #prices .prices-container .prices-text-mh--play {
+    min-height: 100px; }
+  #prices .prices-container .prices-text-mh {
+    min-height: 320px; } }
+@media screen and (max-width: 768px) {
+  #prices .prices-container .prices-heading-mh--play {
+    min-height: unset; }
+  #prices .prices-container .prices-text-mh--play {
+    min-height: unset; }
+  #prices .prices-container .prices-text-mh {
+    min-height: unset; } }
 #plan .plan-nav {
   width: 100%; }
   #plan .plan-nav li a {
@@ -141,9 +159,84 @@ header p.subpage-description {
 #panel .table td {
   vertical-align: middle; }
 
-#timetable .container {
-  background-color: #F5B698; }
+#timetable #calendar.fc td, #timetable #calendar.fc th {
+  border: none;
+  color: #2363AE; }
+#timetable #calendar.fc th {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+#timetable #calendar.fc tbody tr {
+  background-color: #F3D6C8; }
+#timetable #calendar.fc tbody tr:nth-child(4n + 1), #timetable #calendar.fc tbody tr:nth-child(4n + 2) {
+  background-color: #FDEFE8; }
 #timetable #calendar {
-  background-color: #FFFFFF; }
+  background-color: #F5B698;
+  position: relative; }
+  #timetable #calendar .fc-right {
+    position: absolute;
+    bottom: -50px;
+    left: calc(50% - 80px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    #timetable #calendar .fc-right .fc-prev-button, #timetable #calendar .fc-right .fc-next-button {
+      background-color: transparent;
+      border: none;
+      transition: transform 1s; }
+      #timetable #calendar .fc-right .fc-prev-button:focus, #timetable #calendar .fc-right .fc-next-button:focus {
+        box-shadow: none; }
+      #timetable #calendar .fc-right .fc-prev-button:hover, #timetable #calendar .fc-right .fc-next-button:hover {
+        transform: scale(1.2); }
+      #timetable #calendar .fc-right .fc-prev-button span, #timetable #calendar .fc-right .fc-next-button span {
+        color: #F5B698; }
+    #timetable #calendar .fc-right .fc-today-button {
+      text-decoration: underline;
+      text-transform: uppercase;
+      color: #2363AE;
+      background-color: transparent;
+      border: none; }
+  #timetable #calendar table {
+    font-family: "Effra", "Open Sans", sans-serif;
+    border-color: transparent; }
+    #timetable #calendar table thead {
+      border-color: transparent; }
+      #timetable #calendar table thead th {
+        color: #2363AE;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 2px; }
+      #timetable #calendar table thead th:nth-child(2n) {
+        background-color: #F4CCBA; }
+#timetable .plan-nav {
+  width: 100%; }
+  #timetable .plan-nav li a {
+    text-align: center; }
+#timetable .plan-container {
+  min-height: 300px; }
+#timetable #room-form input {
+  display: none; }
+#timetable #room-form label {
+  cursor: pointer;
+  padding: 15px 30px;
+  color: #FFFFFF;
+  line-height: 20px; }
+#timetable #room-form .form-check {
+  margin: 0; }
+  #timetable #room-form .form-check:nth-child(even) label {
+    background-color: #F3D6C8; }
+  #timetable #room-form .form-check:nth-child(odd) label {
+    background-color: #F4CCBA; }
+#timetable #room-form input:checked ~ label {
+  background-color: #F5B698 !important;
+  text-decoration: underline;
+  color: #FFFFFF; }
+#timetable #room-form input:checked ~ label:after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  top: -10px;
+  left: 0;
+  background-color: #F5B698;
+  position: absolute; }
 
 /*# sourceMappingURL=subpages.css.map */

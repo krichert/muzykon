@@ -7,6 +7,17 @@
 @font-face {
   font-family: 'Effra-Light';
   src: url("../fonts/effra/Effra_Std_Lt.ttf") format("truetype"); }
+@keyframes swing {
+  0% {
+    transform: rotate(3deg); }
+  25% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(-3deg); }
+  75% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(3deg); } }
 * {
   margin: 0;
   padding: 0; }
@@ -72,18 +83,23 @@ section h1 {
   text-align: center;
   margin-top: 45px;
   margin-bottom: 45px;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: background-color 1s; }
   .app-btn-accent:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    background-color: #F5B698 !important; }
 
 .app-slider-btn {
   position: absolute;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 24px; }
+  font-size: 24px;
+  transition: transform 1s; }
   .app-slider-btn:focus {
     outline: none; }
+  .app-slider-btn:hover {
+    transform: scale(1.2); }
 
 .app-back-link {
   letter-spacing: 2px;
@@ -135,6 +151,8 @@ header .app-nav-icon {
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer; }
+  header .app-nav-icon:hover span {
+    background: #F5B698; }
   header .app-nav-icon span {
     display: block;
     position: absolute;
@@ -170,6 +188,8 @@ header .app-nav-icon {
     -moz-transform-origin: left center;
     -o-transform-origin: left center;
     transform-origin: left center; }
+header .app-nav-trigger:checked ~ .app-nav-trigger-label .app-nav-icon span {
+  background: #2363AE !important; }
 header .app-nav-trigger:checked ~ .app-nav-trigger-label .app-nav-icon span:nth-child(1) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -211,5 +231,11 @@ footer .partners-item {
 footer .link-container {
   margin-top: 30px;
   margin-bottom: 30px; }
+  footer .link-container a {
+    transition: transform 1s; }
+  footer .link-container a:hover {
+    transform: scale(1.2); }
+  footer .link-container a:hover img {
+    animation: swing ease-in-out 3s infinite; }
 
 /*# sourceMappingURL=style.css.map */

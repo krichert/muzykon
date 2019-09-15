@@ -15,6 +15,13 @@
 	src: url('../fonts/effra/Effra_Std_Lt.ttf') format('truetype');
 }
 
+@keyframes swing {
+	0% { transform: rotate(3deg); }
+	25% { transform: rotate(0deg); }
+	50% { transform: rotate(-3deg); }
+	75% { transform: rotate(0deg); }
+	100% { transform: rotate(3deg); }
+}
 
 // GENERAL
 
@@ -101,9 +108,11 @@ section {
 	margin-top: 45px;
 	margin-bottom: 45px;
 	cursor: pointer;
+	transition: background-color 1s;
 
 	&:hover {
 		text-decoration: none;
+		background-color: $primary-color !important;
 	}
 }
 
@@ -113,9 +122,14 @@ section {
 	border: none;
 	cursor: pointer;
 	font-size: 24px;
+	transition: transform 1s;
 
 	&:focus {
 		outline: none;
+	}
+
+	&:hover {
+		transform: scale(1.2);
 	}
 }
 
@@ -189,6 +203,10 @@ header {
 		transition: .5s ease-in-out;
 		cursor: pointer;
 
+		&:hover span {
+			background: $primary-color;
+		}
+
 		span {
 			display: block;
 			position: absolute;
@@ -234,6 +252,10 @@ header {
 	}
 
 	.app-nav-trigger:checked ~ .app-nav-trigger-label {
+		.app-nav-icon span {
+			background: $accent-color !important;
+		}
+
 		.app-nav-icon span:nth-child(1) {
 			-webkit-transform: rotate(45deg);
 			-moz-transform: rotate(45deg);
@@ -294,5 +316,17 @@ footer {
 	.link-container {
 		margin-top: 30px;
 		margin-bottom: 30px;
+
+		a {
+			transition: transform 1s;
+		}
+
+		a:hover {
+			transform: scale(1.2);
+		}
+
+		a:hover img {
+			animation: swing ease-in-out 3s infinite;
+		}
 	}
 }
