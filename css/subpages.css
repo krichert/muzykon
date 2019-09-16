@@ -172,6 +172,8 @@ header p.subpage-description {
 #timetable #calendar {
   background-color: #F5B698;
   position: relative; }
+  #timetable #calendar .fc-today {
+    background-color: transparent; }
   #timetable #calendar .fc-right {
     position: absolute;
     bottom: -50px;
@@ -220,11 +222,11 @@ header p.subpage-description {
   padding: 15px 30px;
   color: #FFFFFF;
   line-height: 20px; }
-#timetable #room-form .form-check {
+#timetable #room-form .form-check-inline {
   margin: 0; }
-  #timetable #room-form .form-check:nth-child(even) label {
+  #timetable #room-form .form-check-inline:nth-child(even) label {
     background-color: #F3D6C8; }
-  #timetable #room-form .form-check:nth-child(odd) label {
+  #timetable #room-form .form-check-inline:nth-child(odd) label {
     background-color: #F4CCBA; }
 #timetable #room-form input:checked ~ label {
   background-color: #F5B698 !important;
@@ -238,5 +240,12 @@ header p.subpage-description {
   left: 0;
   background-color: #F5B698;
   position: absolute; }
+
+@media screen and (max-width: 576px) {
+  #timetable #room-form {
+    width: 100%;
+    flex-wrap: nowrap; }
+    #timetable #room-form label {
+      padding: 15px 15px; } }
 
 /*# sourceMappingURL=subpages.css.map */

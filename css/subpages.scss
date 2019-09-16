@@ -319,6 +319,10 @@ header {
 		background-color: $primary-color;
 		position: relative;
 
+		.fc-today {
+			background-color: transparent;
+		}
+
 		.fc-right {
 			position: absolute;
 			bottom: -50px;
@@ -403,7 +407,7 @@ header {
 			line-height: 20px;
 		}
 
-		.form-check {
+		.form-check-inline {
 			margin: 0;
 
 			&:nth-child(even) label {
@@ -430,6 +434,19 @@ header {
 				left: 0;
 				background-color: $primary-color;
 				position: absolute;
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	#timetable {
+
+		#room-form {
+			width: 100%;
+			flex-wrap: nowrap;
+			label {
+				padding: 15px 15px;
+			}
 		}
 	}
 }

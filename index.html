@@ -37,7 +37,7 @@
 </head>
 <body>
 
-<header class="main-header">
+<header>
     <input type="checkbox" class="app-nav-trigger" id="nav">
     <label class="app-nav-trigger-label" for="nav">
         <span class="app-nav-icon">
@@ -62,7 +62,7 @@
     <div class="container-fluid mh-100 p-0">
         <div class="row no-gutters">
             <div class="col-md-8 order-1 order-md-0">
-                <img id="hero-img" class="img-fluid w-100"" src="./img/hero.png" alt="hero"/>
+                <img id="hero-img" class="img-fluid w-100" src="./img/hero.png" alt="hero"/>
             </div>
             <div class="col-md-3 align-self-md-end m-5 m-md-0">
                 <img class="img-fluid" src="./img/logo.png" alt="logo"/>
@@ -85,7 +85,7 @@
                             <img class="img-fluid" src="./img/learn.png" alt="learn"/>
                         </div>
                         <h6 class="function-heading text-center">UCZĘ SIĘ</h6>
-                        <div class="function-description text-center">
+                        <div class="function-description text-center mx-3 mx-md-0">
                             Muzykon to zajęcia muzyczne dla dzieci, młodzieży i dorosłych oraz różnorodne warsztaty i
                             koncerty.
                         </div>
@@ -101,7 +101,7 @@
                             <img class="img-fluid" src="./img/play.png" alt="play"/>
                         </div>
                         <h6 class="function-heading text-center">GRAM</h6>
-                        <div class="function-description text-center">
+                        <div class="function-description text-center mx-3 mx-md-0">
                             Muzykon to sale prób, dwie małe i jedna duża.
                         </div>
                         <div class="d-flex justify-content-center">
@@ -116,7 +116,7 @@
                             <img class="img-fluid" src="./img/record.png" alt="record"/>
                         </div>
                         <h6 class="function-heading text-center">NAGRYWAM</h6>
-                        <div class="function-description text-center">
+                        <div class="function-description text-center mx-3 mx-md-0">
                             Muzykon to studio nagrań z profesjonalną reżyserką i świetynmi reżyserami dźwięku.
                         </div>
                         <div class="d-flex justify-content-center">
@@ -245,15 +245,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <form class="d-flex flex-column justify-content-center align-items-center">
+                    <form action="mail_handler.php" method="post"
+                          class="d-flex flex-column justify-content-center align-items-center">
                         <label for="name">Imię i nazwisko</label>
-                        <input id="name" type="text" pattern="[A-Za-z]+" title="Podaj tylko litery"/>
+                        <input id="name" type="text" name="name" pattern="[A-Za-z]+" title="Podaj tylko litery"/>
                         <label for="phone">Numer telefonu</label>
-                        <input id="phone" type="text" pattern="[0-9]+" title="Podaj tylko cyfry"/>
+                        <input id="phone" type="text" name="phone" pattern="[0-9]+" title="Podaj tylko cyfry"/>
                         <label for="email">Adres email</label>
-                        <input id="email" type="email" title="Podaj poprawny adres email"/>
+                        <input id="email" type="email" name="email" title="Podaj poprawny adres email"/>
                         <label for="message">Treść wiadomości</label>
-                        <textarea id="message" type="email"></textarea>
+                        <textarea id="message" name="message"></textarea>
                         <input class="app-btn-accent contact-submit-btn" type="submit" value="WYŚLIJ"/>
                     </form>
                 </div>

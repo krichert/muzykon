@@ -5,10 +5,6 @@
 }
 
 @media screen and (max-width: 768px) {
-	.main-header {
-		min-height: 100vh;
-	}
-
 	.mobile-arrow-down {
 		transform: rotate(90deg);
 		display: block !important;
@@ -152,6 +148,14 @@
 			line-height: 20px;
 			margin-top: 20px;
 			margin-bottom: 30px;
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	#crew {
+		.crew-container {
+			padding: 0;
 		}
 	}
 }
