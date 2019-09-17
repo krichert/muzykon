@@ -153,7 +153,7 @@ header {
 		width: 320px;
 		right: -320px;
 		transition: right 0.5s ease-in-out;
-		background-color: $primary-color;
+		background-color: $accent-color;
 		z-index: 1000;
 	}
 
@@ -253,7 +253,7 @@ header {
 
 	.app-nav-trigger:checked ~ .app-nav-trigger-label {
 		.app-nav-icon span {
-			background: $accent-color !important;
+			background: $primary-color !important;
 		}
 
 		.app-nav-icon span:nth-child(1) {

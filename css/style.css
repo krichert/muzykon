@@ -53,7 +53,7 @@ section h1 {
   background-color: #2363AE !important; }
 
 .app-bg-accent-second {
-  background-color: #98ADC5 !important; }
+  background-color: #4f82be !important; }
 
 .app-text-primary {
   color: #F5B698 !important; }
@@ -65,7 +65,7 @@ section h1 {
   color: #2363AE !important; }
 
 .app-text-accent-second {
-  color: #98ADC5 !important; }
+  color: #4f82be !important; }
 
 .app-text-base {
   color: #FFFFFF !important; }
@@ -115,7 +115,7 @@ header .app-nav {
   width: 320px;
   right: -320px;
   transition: right 0.5s ease-in-out;
-  background-color: #F5B698;
+  background-color: #2363AE;
   z-index: 1000; }
 header .app-nav-menu-content a {
   text-decoration: none;
@@ -189,7 +189,7 @@ header .app-nav-icon {
     -o-transform-origin: left center;
     transform-origin: left center; }
 header .app-nav-trigger:checked ~ .app-nav-trigger-label .app-nav-icon span {
-  background: #2363AE !important; }
+  background: #F5B698 !important; }
 header .app-nav-trigger:checked ~ .app-nav-trigger-label .app-nav-icon span:nth-child(1) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);

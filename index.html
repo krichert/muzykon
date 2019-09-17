@@ -37,7 +37,7 @@
 </head>
 <body>
 
-<header>
+<header class="main-header">
     <input type="checkbox" class="app-nav-trigger" id="nav">
     <label class="app-nav-trigger-label" for="nav">
         <span class="app-nav-icon">
@@ -61,11 +61,11 @@
 
     <div class="container-fluid mh-100 p-0">
         <div class="row no-gutters">
-            <div class="col-md-8 order-1 order-md-0">
+            <div class="col-md-7 order-1 order-md-0">
                 <img id="hero-img" class="img-fluid w-100" src="./img/hero.png" alt="hero"/>
             </div>
-            <div class="col-md-3 align-self-md-end m-5 m-md-0">
-                <img class="img-fluid" src="./img/logo.png" alt="logo"/>
+            <div class="col-md-3 offset-md-1 align-self-md-end">
+                <img class="img-fluid w-100 logo-img" src="./img/logo.png" alt="logo"/>
             </div>
         </div>
         <div class="row d-none mobile-arrow-down">
@@ -81,9 +81,11 @@
             <div class="row">
                 <div class="col-md">
                     <div class="function-container app-bg-primary">
-                        <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
-                            <img class="img-fluid" src="./img/learn.png" alt="learn"/>
-                        </div>
+                        <a href="school.html">
+                            <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
+                                <img class="img-fluid" src="./img/learn.png" alt="learn"/>
+                            </div>
+                        </a>
                         <h6 class="function-heading text-center">UCZĘ SIĘ</h6>
                         <div class="function-description text-center mx-3 mx-md-0">
                             Muzykon to zajęcia muzyczne dla dzieci, młodzieży i dorosłych oraz różnorodne warsztaty i
@@ -97,9 +99,11 @@
 
                 <div class="col-md">
                     <div class="function-container app-bg-accent-second">
-                        <div class="function-icon d-flex justify-content-center align-items-center app-text-primary">
-                            <img class="img-fluid" src="./img/play.png" alt="play"/>
-                        </div>
+                        <a href="play.html">
+                            <div class="function-icon d-flex justify-content-center align-items-center app-text-primary">
+                                <img class="img-fluid" src="./img/play.png" alt="play"/>
+                            </div>
+                        </a>
                         <h6 class="function-heading text-center">GRAM</h6>
                         <div class="function-description text-center mx-3 mx-md-0">
                             Muzykon to sale prób, dwie małe i jedna duża.
@@ -112,9 +116,11 @@
 
                 <div class="col-md">
                     <div class="function-container app-bg-primary">
-                        <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
-                            <img class="img-fluid" src="./img/record.png" alt="record"/>
-                        </div>
+                        <a href="record.html">
+                            <div class="function-icon d-flex justify-content-center align-items-center app-bg-secondary">
+                                <img class="img-fluid" src="./img/record.png" alt="record"/>
+                            </div>
+                        </a>
                         <h6 class="function-heading text-center">NAGRYWAM</h6>
                         <div class="function-description text-center mx-3 mx-md-0">
                             Muzykon to studio nagrań z profesjonalną reżyserką i świetynmi reżyserami dźwięku.
@@ -235,6 +241,36 @@
                             muzyczną. W wolnym czasie jeździ na rolkach i gra w gry planszowe.
                         </div>
                     </div>
+
+                    <div class="crew-container">
+                        <div class="d-flex justify-content-center">
+                            <img class="img-fluid" src="./pictures/Arek-Czernysz.png" alt="Arek Czernysz"/>
+                        </div>
+                        <h6 class="crew-heading text-center">Arek Czernysz</h6>
+                        <div class="crew-description text-center">
+                            wirtuoz akordeonu, absolwent wydziału Jazz i Muzyka Rozrywkowa w Akademii Muzycznej w
+                            Gdańsku. Ma bardzo duże doświadczenie w pracy pedagogicznej, zarówno z dziećmi jak i
+                            dorosłymi. Nie boi się wyzwań, uczy gry od klasyki po jazz, zarówno młodszych uczniów jak i
+                            dorosłych. Stosuje autorski program nauczania, dzięki czemu dopasowuje tempo nauki
+                            indywidualnie dla każdego. W 2016 roku założył Arek Czernysz Trio, z którym wydał bardzo
+                            dobrze przyjętą przez krytyków płytę “Breath”.
+                        </div>
+                    </div>
+
+                    <div class="crew-container">
+                        <div class="d-flex justify-content-center">
+                            <img class="img-fluid" src="./pictures/Weronika-Pryczkowska.png"
+                                 alt="Weronika Pryczkowska"/>
+                        </div>
+                        <h6 class="crew-heading text-center">Weronika Pryczkowska</h6>
+                        <div class="crew-description text-center">
+                            związana z wydziałemMusicalu na Akademii Muzycznej im. Stanisława Moniuszki w Gdańsku. Kocha
+                            śpiewać,grać i tańczyć. Do tej pory umiejętności teatralne i wokalne prezentowała w
+                            spektaklach takich jak: "Wodna opowieść" w Teatrze Junior w Gdyni, "Zakochany Bóg" w Domu
+                            Kultury w Radzionkowie, "Bladolandia" w Teatrze w Wołominie, „Funny Girls”, a także „Miłość
+                            i więcej nic”.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -318,7 +354,7 @@
                     <img src="./img/youtube.png" alt="youtube"/>
                 </a>
             </div>
-            <small class="text-center d-block">Muzyczna Przestrzeń Artystyczna <strong>Muykon 2019 ©</strong></small>
+            <small class="text-center d-block">Pracownia Muzyczna <strong>Muzykon 2019 ©</strong></small>
             <h1>
                 <a href="admin.html" target="_blank">ADMIN PANEL</a>
             </h1>

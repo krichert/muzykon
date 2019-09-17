@@ -10,9 +10,12 @@
     margin-bottom: 15px; }
     .mobile-arrow-down span {
       color: #F5B698;
-      font-size: 30px; } }
+      font-size: 30px; }
+
+  header .logo-img {
+    padding: 3rem; } }
 #functions {
-  margin-top: 180px; }
+  margin-top: 150px; }
   #functions .function-container {
     padding: 15px;
     position: relative;
@@ -91,6 +94,9 @@
     margin-top: 20px;
     margin-bottom: 30px; }
 
+@media screen and (max-width: 1200px) {
+  #crew .crew-container {
+    padding: 0 15px; } }
 @media screen and (max-width: 576px) {
   #crew .crew-container {
     padding: 0; } }
