@@ -177,6 +177,18 @@
   font-size: 16px;
   font-family: "Effra-Bold", "Open Sans", sans-serif;
   line-height: 24px; }
+#contact .contact-text-small {
+  text-align: center;
+  font-size: 9px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 15px;
+  max-width: 250px; }
+  #contact .contact-text-small a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #414142; }
+    #contact .contact-text-small a:hover {
+      text-decoration: underline; }
 #contact a {
   text-decoration: none;
   color: #414142; }

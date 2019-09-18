@@ -293,6 +293,24 @@
 		line-height: 24px;
 	}
 
+	.contact-text-small {
+		text-align: center;
+		font-size: 9px;
+		font-family: $secondary-font, sans-serif;
+		line-height: 15px;
+		max-width: 250px;
+
+		a {
+			text-decoration: underline;
+			font-weight: bold;
+			color: $contrast-color;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
 	a {
 		text-decoration: none;
 		color: $contrast-color;
