@@ -86,12 +86,19 @@
   #crew .crew-container .crew-heading {
     font-family: "Effra-Bold", "Open Sans", sans-serif;
     font-size: 16px;
-    margin-top: 30px; }
+    margin-top: 30px;
+    margin-bottom: 0; }
+  #crew .crew-container .crew-instrument {
+    text-align: center;
+    font-style: italic;
+    font-size: 13px;
+    font-family: "Effra", "Open Sans", sans-serif;
+    margin: 0; }
   #crew .crew-container .crew-description {
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 30px; }
 
 @media screen and (max-width: 1200px) {

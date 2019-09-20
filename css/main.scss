@@ -144,13 +144,22 @@
 			font-family: $base-font-bold, $secondary-font, sans-serif;
 			font-size: 16px;
 			margin-top: 30px;
+			margin-bottom: 0;
+		}
+
+		.crew-instrument {
+			text-align: center;
+			font-style: italic;
+			font-size: 13px;
+			font-family: $base-font, $secondary-font, sans-serif;
+			margin: 0;
 		}
 
 		.crew-description {
 			font-family: $secondary-font, sans-serif;
 			font-size: 12px;
 			line-height: 20px;
-			margin-top: 20px;
+			margin-top: 30px;
 			margin-bottom: 30px;
 		}
 	}
