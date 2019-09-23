@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: __TO FILL__
+Sitemap: http://muzykon.pl/sitemap.xml

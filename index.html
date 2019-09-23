@@ -197,7 +197,7 @@
                             <img class="img-fluid" src="./pictures/Tomek-Klepczynski.png" alt="Tomasz Klepczyński"/>
                         </div>
                         <h5 class="crew-heading text-center">Tomasz Klepczyński</h5>
-                        <h6 class="crew-instrument">SAKSOFON, KLARNET</h6>
+                        <h6 class="crew-instrument">KLARNET, SAKSOFON</h6>
                         <div class="crew-description text-center">
                             założyciel Pracowni Muzycznej Muzykon i jednocześnie klarnecista i saksofonista, kompozytor
                             i aranżer. Posiada dwa dyplomy magisterskie z klasyki i jazzu, ale się tym nie chwali. Jego
@@ -298,7 +298,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <form action="php/mail_handler.php" method="post"
+                    <form id="contact-form" action="mail_handler.php5" method="post"
                           class="d-flex flex-column justify-content-center align-items-center">
                         <label for="name">Imię i nazwisko</label>
                         <input id="name" type="text" name="name" pattern="[A-Za-z]+" title="Podaj tylko litery"/>
@@ -331,7 +331,7 @@
 
                     <small class="contact-text-small">Administratorem danych osobowych jest Pracownia Muzyczna Muzykon
                         (80-257 Gdańsk, ul. Słowackiego 37). Dane wpisywane w formularzu kontaktowym będą przetwarzane w
-                        celu udzielenia odpowiedzi na przesłane zapytanie zgodnie z <a href="#">regulaminem</a>.
+                        celu udzielenia odpowiedzi na przesłane zapytanie zgodnie z <a>regulaminem</a>.
                     </small>
                 </div>
             </div>
@@ -372,7 +372,7 @@
                 <a class="mx-1" href="https://www.instagram.com/pracownia.muzykon/" target="_blank">
                     <img src="./img/instragram.png" alt="instagram"/>
                 </a>
-                <a class="mx-1" href="#" target="_blank">
+                <a class="mx-1" target="_blank">
                     <img src="./img/youtube.png" alt="youtube"/>
                 </a>
             </div>
@@ -391,9 +391,10 @@
 <script src="js/smooth-scroll.js"></script>
 <script src="js/slick.js"></script>
 <script src="js/use-slick.js"></script>
+<script src="js/mail.js"></script>
 <script src="js/change-hero.js"></script>
 <script src="js/map.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUwTyrDgL20F_jcNEF-Dgb8k2C2cIIcGs&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTMu3zY7PumRA_elc1wLuxA3_Ml1Xega0&callback=initMap"
+        type="text/javascript"></script>
 </body>
 </html>

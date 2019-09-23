@@ -12,6 +12,9 @@
       color: #F5B698;
       font-size: 30px; }
 
+  .crew-slick-container {
+    padding: 0 40px; }
+
   header .logo-img {
     padding: 3rem; } }
 #functions {
@@ -98,8 +101,10 @@
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 20px;
+    margin: auto;
     margin-top: 30px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    max-width: 250px; }
 
 @media screen and (max-width: 1200px) {
   #crew .crew-container {
@@ -107,6 +112,10 @@
 @media screen and (max-width: 576px) {
   #crew .crew-container {
     padding: 0; } }
+@media screen and (max-width: 380px) {
+  #crew .crew-container img {
+    max-width: 195px;
+    max-height: 195px; } }
 #gallery {
   padding-bottom: 110px; }
   #gallery .slick-center .gallery-img-container {

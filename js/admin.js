@@ -12,14 +12,14 @@ $(document).ready(function () {
     var newsDescriptionInput = $('#newsDescription');
     var newsSubmit = $('#newsSubmit');
 
-    newsDateInput.val(getWeekDay(today.getDay()) + ', ' + today.getDate() + '.' + today.getMonth() + '.' + today.getFullYear());
+    newsDateInput.val(getWeekDay(today.getDay()) + ', ' + today.getDate() + '.' + formatNumber(today.getMonth()) + '.' + today.getFullYear());
 
     newsSubmit.on('click', function (e) {
         e.preventDefault();
 
         addNews(newsDateInput.val(), newsTitleInput.val(), newsDescriptionInput.val())
             .then(function () {
-                newsDateInput.val(getWeekDay(today.getDay()) + ', ' + today.getDate() + '.' + today.getMonth() + '.' + today.getFullYear());
+                newsDateInput.val(getWeekDay(today.getDay()) + ', ' + today.getDate() + '.' + formatNumber(today.getMonth()) + '.' + today.getFullYear());
                 newsTitleInput.val('');
                 newsDescriptionInput.val('');
             })
@@ -268,5 +268,13 @@ function getWeekDay(number) {
             return "SOBOTA";
         case 6:
             return "NIEDZIELA";
+    }
+}
+
+function formatNumber(month) {
+    if (month < 10) {
+        return '0' + month;
+    } else {
+        return month;
     }
 }
