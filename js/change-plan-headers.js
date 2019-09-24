@@ -15,9 +15,6 @@ function setPlanHeaders() {
     var sat = $('a[href="#sat"]');
     var sun = $('a[href="#sun"]');
 
-    console.log(mon)
-
-
     var mq = window.matchMedia("(max-width: 992px)");
 
     if (mq.matches) {

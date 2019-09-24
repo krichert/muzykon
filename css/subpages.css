@@ -65,7 +65,7 @@ header p.subpage-description {
     #prices .prices-container .prices-text-mh--play {
       min-height: 80px; }
     #prices .prices-container .prices-text-mh {
-      min-height: 180px; }
+      min-height: 160px; }
   #prices .prices-text-row {
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
@@ -77,14 +77,14 @@ header p.subpage-description {
 
 @media screen and (max-width: 1200px) {
   #prices .prices-container .prices-text-mh {
-    min-height: 220px; } }
+    min-height: 200px; } }
 @media screen and (max-width: 992px) {
   #prices .prices-container .prices-heading-mh--play {
     min-height: 42px; }
   #prices .prices-container .prices-text-mh--play {
     min-height: 100px; }
   #prices .prices-container .prices-text-mh {
-    min-height: 340px; } }
+    min-height: 320px; } }
 @media screen and (max-width: 768px) {
   #prices .prices-container .prices-heading-mh--play {
     min-height: unset; }
@@ -127,6 +127,8 @@ header p.subpage-description {
     color: #2363AE;
     text-align: center;
     padding: 15px 0; }
+    #plan .table th a, #plan .table td a {
+      color: #2363AE; }
   #plan .table th {
     text-transform: uppercase;
     font-size: 10px;
@@ -142,7 +144,7 @@ header p.subpage-description {
   #plan .table thead th:first-child {
     width: 180px; }
   #plan .table thead th:last-child {
-    width: 120px; }
+    width: 150px; }
 
 #panel h2 {
   font-family: "Effra", "Open Sans", sans-serif;

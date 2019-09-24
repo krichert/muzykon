@@ -100,7 +100,7 @@ header {
 		}
 
 		.prices-text-mh {
-			min-height: 180px;
+			min-height: 160px;
 		}
 	}
 
@@ -121,7 +121,7 @@ header {
 	#prices {
 		.prices-container {
 			.prices-text-mh {
-				min-height: 220px;
+				min-height: 200px;
 			}
 		}
 
@@ -140,7 +140,7 @@ header {
 			}
 
 			.prices-text-mh {
-				min-height: 340px;
+				min-height: 320px;
 			}
 		}
 	}
@@ -224,6 +224,10 @@ header {
 			color: $accent-color;
 			text-align: center;
 			padding: 15px 0;
+
+			a {
+				color: $accent-color;
+			}
 		}
 
 		th {
@@ -253,7 +257,7 @@ header {
 		}
 
 		thead th:last-child {
-			width: 120px;
+			width: 150px;
 		}
 	}
 }
