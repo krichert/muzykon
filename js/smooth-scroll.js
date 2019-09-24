@@ -1,5 +1,6 @@
 $(document).ready(function () {
   const $navMenuItems = $('.nav-menu__list  a');
+  const $navCheckbox = $('.app-nav-trigger');
 
   $('nav a[href^="#"]').on('click', function (event) {
 
@@ -17,5 +18,7 @@ $(document).ready(function () {
         scrollTop: target.offset().top - 56
       }, 1000);
     }
+
+    $navCheckbox.prop("checked", !$navCheckbox.prop("checked"));
   });
 });
