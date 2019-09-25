@@ -65,7 +65,7 @@ header p.subpage-description {
     #prices .prices-container .prices-text-mh--play {
       min-height: 80px; }
     #prices .prices-container .prices-text-mh {
-      min-height: 160px; }
+      min-height: 180px; }
   #prices .prices-text-row {
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
@@ -77,14 +77,14 @@ header p.subpage-description {
 
 @media screen and (max-width: 1200px) {
   #prices .prices-container .prices-text-mh {
-    min-height: 200px; } }
+    min-height: 220px; } }
 @media screen and (max-width: 992px) {
   #prices .prices-container .prices-heading-mh--play {
     min-height: 42px; }
   #prices .prices-container .prices-text-mh--play {
     min-height: 100px; }
   #prices .prices-container .prices-text-mh {
-    min-height: 320px; } }
+    min-height: 340px; } }
 @media screen and (max-width: 768px) {
   #prices .prices-container .prices-heading-mh--play {
     min-height: unset; }
