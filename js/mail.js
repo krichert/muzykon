@@ -15,7 +15,7 @@ $(document).ready(function () {
         var posting = $.post(url, {
             name: name_value,
             email: email_value,
-            phome: number_value,
+            phone: number_value,
             message: message_value
         });
 

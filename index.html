@@ -301,7 +301,7 @@
                     <form id="contact-form" action="mail_handler.php5" method="post"
                           class="d-flex flex-column justify-content-center align-items-center">
                         <label for="name">Imię i nazwisko</label>
-                        <input id="name" type="text" name="name" pattern="[A-Za-z]+" title="Podaj tylko litery"/>
+                        <input id="name" type="text" name="name" pattern="[A-Za-z\s]+" title="Podaj tylko litery"/>
                         <label for="phone">Numer telefonu</label>
                         <input id="phone" type="text" name="phone" pattern="[0-9]+" title="Podaj tylko cyfry"/>
                         <label for="email">Adres email</label>
@@ -394,7 +394,7 @@
 <script src="js/mail.js"></script>
 <script src="js/change-hero.js"></script>
 <script src="js/map.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTMu3zY7PumRA_elc1wLuxA3_Ml1Xega0&callback=initMap"
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
         type="text/javascript"></script>
 </body>
 </html>
