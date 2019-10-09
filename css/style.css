@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Effra-Bold';
-  src: url("../fonts/effra/Effra_Std_Bd.ttf") format("truetype"); }
+  src: url("./fonts/effra/Effra_Std_Bd.ttf") format("truetype"); }
 @font-face {
   font-family: 'Effra';
-  src: url("../fonts/effra/Effra_Std_Md.ttf") format("truetype"); }
+  src: url("./fonts/effra/Effra_Std_Md.ttf") format("truetype"); }
 @font-face {
   font-family: 'Effra-Light';
-  src: url("../fonts/effra/Effra_Std_Lt.ttf") format("truetype"); }
+  src: url("./fonts/effra/Effra_Std_Lt.ttf") format("truetype"); }
 @keyframes swing {
   0% {
     transform: rotate(3deg); }
