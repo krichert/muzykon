@@ -585,6 +585,61 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row app-bg-primary mt-5">
+                <div class="col">
+                    <h2 class="my-3">EKIPA</h2>
+                    <div class="crew-table table-responsive">
+                        <table class="table table-light w-100">
+                            <thead>
+                            <tr>
+                                <th scope="col">Członek</th>
+                                <th scope="col">Instrumenty</th>
+                                <th scope="col">Opis</th>
+                                <th scope="col">Zdjęcie</th>
+                                <th scope="col" width="100px" class="text-center">Usuń</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-8 offset-2">
+                        <hr>
+                    </div>
+                    <div class="news-form col-md-6 offset-md-3 mb-3">
+                        <form>
+                            <h3 class="my-3">Dodaj członka</h3>
+                            <div class="form-group row">
+                                <label for="crewName" class="col-2 col-form-label">Imię</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="crewName" required="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="crewInstruments" class="col-2 col-form-label">Instrumenty</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="crewInstruments" required="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="crewDescription" class="col-2 col-form-label">Opis</label>
+                                <div class="col-10">
+                                    <textarea class="form-control" id="crewDescription" required=""></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input type="file" class="form-control" id="crewPhoto" required="">
+                                </div>
+                                <div class="col-12 text-center mt-1">
+                                    <button id="crewSubmit" class="btn btn-primary" type="submit">Dodaj</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -624,5 +679,6 @@
 <script src="js/admin/admin-timetable.js"></script>
 <script src="js/admin/admin-plan.js"></script>
 <script src="js/admin/admin-gallery.js"></script>
+<script src="js/admin/admin-crew.js"></script>
 </body>
 </html>

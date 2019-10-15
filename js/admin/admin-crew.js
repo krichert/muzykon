@@ -1,41 +1,50 @@
 $(document).ready(function () {
-    var photoInput = $('#photo');
-    var photoSubmit = $('#photoSubmit');
+    var crewNameInput = $('#crewName');
+    var crewInstrumentsInput = $('#crewInstruments');
+    var crewDescriptionInput = $('#crewDescription');
+    var crewPhotoInput = $('#crewPhoto');
+    var crewSubmit = $('#crewSubmit');
 
-    photoSubmit.on('click', function (e) {
+    crewSubmit.on('click', function (e) {
         e.preventDefault();
 
-        if (photoInput[0].files[0]) {
-            addGallery(photoInput[0].files[0])
+        if (crewPhotoInput[0].files[0]) {
+            addCrew(crewPhotoInput[0].files[0], crewNameInput.val(), crewInstrumentsInput.val(), crewDescriptionInput.val())
         } else {
             alert('Dodaj zdjęcie!')
         }
     });
 
-    getGallery();
+    getCrew();
 });
 
-function getGallery() {
-    var tableBody = document.querySelector('.gallery-table tbody');
+function getCrew() {
+    var tableBody = document.querySelector('.crew-table tbody');
 
     while (tableBody.firstChild) {
         tableBody.removeChild(tableBody.firstChild);
     }
 
-    firebase.database().ref('gallery').once('value')
+    firebase.database().ref('crew').once('value')
         .then(function (snapshot) {
-            var gallery = snapshot.val();
+            var crew = snapshot.val();
 
-            Object.keys(gallery).map(function (key) {
+            Object.keys(crew).map(function (key) {
                 return {
                     id: key,
-                    ...gallery[key]
+                    ...crew[key]
                 }
             }).forEach(function (el) {
                 var row = document.createElement('tr');
 
                 var nameCol = document.createElement('td');
                 nameCol.innerText = el.name;
+
+                var instrumentsCol = document.createElement('td');
+                instrumentsCol.innerText = el.instruments;
+
+                var descriptionCol = document.createElement('td');
+                descriptionCol.innerText = el.description;
 
                 var imgCol = document.createElement('td');
                 var img = document.createElement('img');
@@ -54,10 +63,12 @@ function getGallery() {
 
 
                 delBtn.addEventListener('click', function () {
-                    removeGallery(el.id);
+                    removeCrew(el.id);
                 });
 
                 row.appendChild(nameCol);
+                row.appendChild(instrumentsCol);
+                row.appendChild(descriptionCol);
                 row.appendChild(imgCol);
                 row.appendChild(delCol);
 
@@ -66,19 +77,19 @@ function getGallery() {
         });
 }
 
-function removeGallery(id) {
-    firebase.storage().ref('gallery/' + id).delete()
+function removeCrew(id) {
+    firebase.storage().ref('crew/' + id).delete()
         .then(function () {
-            firebase.database().ref('gallery/' + id).remove().then(function () {
-                getGallery();
+            firebase.database().ref('crew/' + id).remove().then(function () {
+                getCrew();
             })
         })
 }
 
-function addGallery(file) {
-    var key = firebase.database().ref('gallery').push().key;
+function addCrew(file, name, instruments, description) {
+    var key = firebase.database().ref('crew').push().key;
 
-    var uploadTask = firebase.storage().ref('gallery/' + key).put(file)
+    var uploadTask = firebase.storage().ref('crew/' + key).put(file)
 
     uploadTask.on('state_changed', function(snapshot){
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -87,11 +98,13 @@ function addGallery(file) {
         alert('Błąd podczas dodwania zdjęcia. Spróbuj ponownie!')
     }, function() {
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-            firebase.database().ref('gallery/' + key).set({
-                name: file.name,
+            firebase.database().ref('crew/' + key).set({
+                name: name,
+                instruments: instruments,
+                description: description,
                 url: downloadURL
             }).then(function () {
-                getGallery();
+                getCrew();
             })
         });
     });
