@@ -66,6 +66,4 @@ function useSlickForGallery() {
     });
 }
 
-useSlickForGallery();
 useSlickForCrew();
-
