@@ -1,6 +1,7 @@
 var EDIT_CREW_ID = null;
 var IMAGE_CREW_URL = null;
 
+var crewHeadingForm = $('#crew-form h3');
 var crewNameInput = $('#crewName');
 var crewInstrumentsInput = $('#crewInstruments');
 var crewDescriptionInput = $('#crewDescription');
@@ -12,6 +13,27 @@ $(document).ready(function () {
     getCrew();
     crewCancel.hide();
 });
+
+function enterCrewEditMode(el) {
+    crewCancel.show();
+
+    EDIT_CREW_ID = el.id;
+    IMAGE_CREW_URL = el.url;
+
+    crewSubmit.text('Zapisz');
+    crewHeadingForm.text(`Edytuj wpis o ${el.name}`);
+    crewNameInput.val(el.name);
+    crewInstrumentsInput.val(el.instruments);
+    crewDescriptionInput.val(el.description);
+}
+
+function cancelCrewEditMode() {
+    EDIT_CREW_ID = null;
+    IMAGE_CREW_URL = null;
+    crewSubmit.text('Dodaj');
+    crewHeadingForm.text(`Dodaj nowy wpis`);
+    crewCancel.hide();
+}
 
 crewSubmit.on('click', function (e) {
     e.preventDefault();
@@ -38,6 +60,7 @@ crewCancel.on('click', function (e) {
     EDIT_CREW_ID = null;
     IMAGE_CREW_URL = null;
     crewCancel.hide();
+    crewHeadingForm.text('Dodaj osobę')
 });
 
 function getCrew() {
@@ -77,26 +100,18 @@ function getCrew() {
 
                 var edtCol = document.createElement('td');
                 var edtBtn = document.createElement('button');
-                edtBtn.innerText = '🖊';
+                edtBtn.innerText = 'EDYTUJ';
                 edtBtn.className = 'btn btn-primary';
                 edtCol.className = 'text-center';
                 edtCol.appendChild(edtBtn);
 
                 edtBtn.addEventListener('click', function () {
-                    crewCancel.show();
-
-                    EDIT_CREW_ID = el.id;
-                    IMAGE_CREW_URL = el.url;
-
-                    crewSubmit.text('Zapisz');
-                    crewNameInput.val(el.name);
-                    crewInstrumentsInput.val(el.instruments);
-                    crewDescriptionInput.val(el.description);
+                    enterCrewEditMode(el);
                 });
 
                 var delCol = document.createElement('td');
                 var delBtn = document.createElement('button');
-                delBtn.innerText = 'X';
+                delBtn.innerText = 'USUN';
                 delBtn.className = 'btn btn-danger';
                 delCol.className = 'text-center';
                 delCol.appendChild(delBtn);
@@ -151,6 +166,13 @@ function addCrew(file, name, instruments, description) {
                 url: downloadURL
             }).then(function () {
                 getCrew();
+                crewNameInput.val('');
+                crewInstrumentsInput.val('');
+                crewDescriptionInput.val('');
+                crewPhotoInput.val('');
+                if (EDIT_CREW_ID) {
+                    cancelCrewEditMode();
+                }
             })
         });
     });
@@ -164,11 +186,10 @@ function editCrew(name, instruments, description) {
         url: IMAGE_CREW_URL
     }).then(function () {
         getCrew();
-
         crewNameInput.val('');
         crewInstrumentsInput.val('');
         crewDescriptionInput.val('');
         crewPhotoInput.val('');
-        crewSubmit.text('Dodaj');
+        cancelCrewEditMode();
     })
 }

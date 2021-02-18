@@ -1,6 +1,7 @@
 var EDIT_NEWS_ID = null;
 var IMAGE_NEWS_URL = null;
 
+var newsFormHeading = $('#news-form h3');
 var newsDateInput = $('#newsDate');
 var newsTitleInput = $('#newsTitle');
 var newsDescriptionInput = $('#newsDescription');
@@ -15,6 +16,27 @@ $(document).ready(function () {
     getNews();
     newsCancel.hide();
 });
+
+function enterNewsEditMode(el) {
+    newsCancel.show();
+
+    EDIT_NEWS_ID = el.id;
+    IMAGE_NEWS_URL = el.url;
+
+    newsSubmit.text('Zapisz');
+    newsFormHeading.text(`Edytuj wpis z ${el.date}`)
+    newsDateInput.val(el.date);
+    newsTitleInput.val(el.title);
+    newsDescriptionInput.val(el.text);
+}
+
+function cancelNewsEditMode() {
+    EDIT_NEWS_ID = null;
+    IMAGE_NEWS_URL = null;
+    newsSubmit.text('Dodaj');
+    newsFormHeading.text(`Dodaj nowy wpis`);
+    newsCancel.hide();
+}
 
 newsSubmit.on('click', function (e) {
     e.preventDefault();
@@ -38,10 +60,8 @@ newsCancel.on('click', function (e) {
     newsTitleInput.val('');
     newsDescriptionInput.val('');
     newsPhotoInput.val('');
-    newsSubmit.text('Dodaj');
-    EDIT_NEWS_ID = null;
-    IMAGE_NEWS_URL = null;
-    newsCancel.hide();
+    cancelNewsEditMode();
+
 });
 
 function getNews() {
@@ -75,26 +95,18 @@ function getNews() {
 
                 var edtCol = document.createElement('td');
                 var edtBtn = document.createElement('button');
-                edtBtn.innerText = '🖊';
+                edtBtn.innerText = 'EDYTUJ';
                 edtBtn.className = 'btn btn-primary';
                 edtCol.className = 'text-center';
                 edtCol.appendChild(edtBtn);
 
                 edtBtn.addEventListener('click', function () {
-                    newsCancel.show();
-
-                    EDIT_NEWS_ID = el.id;
-                    IMAGE_NEWS_URL = el.url;
-
-                    newsSubmit.text('Zapisz');
-                    newsDateInput.val(el.date);
-                    newsTitleInput.val(el.title);
-                    newsDescriptionInput.val(el.text);
+                    enterNewsEditMode(el);
                 });
 
                 var delCol = document.createElement('td');
                 var delBtn = document.createElement('button');
-                delBtn.innerText = 'X';
+                delBtn.innerText = 'USUN';
                 delBtn.className = 'btn btn-danger';
                 delCol.className = 'text-center';
                 delCol.appendChild(delBtn);
@@ -145,13 +157,13 @@ function addNews(file, date, title, text) {
 
     var uploadTask = firebase.storage().ref('news/' + key).put(file)
 
-    return uploadTask.on('state_changed', function(snapshot){
+    return uploadTask.on('state_changed', function (snapshot) {
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log('Upload is ' + progress + '% done');
-    }, function(error) {
+    }, function (error) {
         alert('Błąd podczas zdjęcia. Spróbuj ponownie!')
-    }, function() {
-        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    }, function () {
+        uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
             firebase.database().ref('news/' + key).set({
                 date: date,
                 title: title,
@@ -164,7 +176,10 @@ function addNews(file, date, title, text) {
                 newsTitleInput.val('');
                 newsDescriptionInput.val('');
                 newsPhotoInput.val('');
-                newsSubmit.text('Dodaj');
+
+                if (EDIT_NEWS_ID) {
+                    cancelNewsEditMode();
+                }
             })
         });
     });
@@ -183,6 +198,6 @@ function editNews(date, title, text) {
         newsTitleInput.val('');
         newsDescriptionInput.val('');
         newsPhotoInput.val('');
-        newsSubmit.text('Dodaj');
+        cancelNewsEditMode();
     })
 }
