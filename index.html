@@ -173,13 +173,13 @@
                     <form id="contact-form" action="mail_handler.php5" method="post"
                           class="d-flex flex-column justify-content-center align-items-center">
                         <label for="name">Imię i nazwisko</label>
-                        <input id="name" type="text" name="name" pattern="[A-Za-z\s]+" title="Podaj tylko litery"/>
+                        <input id="name" type="text" name="name" pattern="[A-Za-z\s]+" required title="Podaj tylko litery"/>
                         <label for="phone">Numer telefonu</label>
-                        <input id="phone" type="text" name="phone" pattern="[0-9]+" title="Podaj tylko cyfry"/>
+                        <input id="phone" type="text" name="phone" pattern="[0-9]+" required title="Podaj tylko cyfry"/>
                         <label for="email">Adres email</label>
-                        <input id="email" type="email" name="email" title="Podaj poprawny adres email"/>
+                        <input id="email" type="email" name="email" required title="Podaj poprawny adres email"/>
                         <label for="message">Treść wiadomości</label>
-                        <textarea id="message" name="message"></textarea>
+                        <textarea id="message" required name="message"></textarea>
                         <input class="app-btn-accent contact-submit-btn" type="submit" value="WYŚLIJ"/>
                     </form>
                 </div>
@@ -192,7 +192,7 @@
                     <small><i>(obok Garnizonu)</i></small>
 
                     <h3 class="contact-heading">EMAIL</h3>
-                    <span class="contact-text"><a href="mailto:rezerwacja@muzykon.pl">kontakt@muzykon.pl</a></span>
+                    <span class="contact-text"><a href="mailto:kontakt@muzykon.pl">kontakt@muzykon.pl</a></span>
 
                     <hr>
 
@@ -237,21 +237,21 @@
                     <div class="partners-item"></div>
                 </div>
             </div>
-            <div class="row link-container justify-content-center">
-                <a class="mx-1" href="https://www.facebook.com/pracownia.muzykon" target="_blank">
-                    <img src="./img/facebook.png" alt="facebook"/>
-                </a>
-                <a class="mx-1" href="https://www.instagram.com/pracownia.muzykon/" target="_blank">
-                    <img src="./img/instragram.png" alt="instagram"/>
-                </a>
-                <a class="mx-1" target="_blank">
-                    <img src="./img/youtube.png" alt="youtube"/>
-                </a>
-            </div>
-            <small class="text-center d-block">Pracownia Muzyczna <strong>Muzykon 2019 ©</strong></small>
+            <small class="text-center mt-2 d-block">Pracownia Muzyczna <strong>Muzykon 2019 ©</strong></small>
             <h1>
                 <a href="admin.html" target="_blank">ADMIN PANEL</a>
             </h1>
+        </div>
+        <div class="link-container d-flex flex-column justify-content-center">
+            <a class="my-1" href="https://www.facebook.com/pracownia.muzykon" target="_blank">
+                <img src="./img/facebook.png" alt="facebook"/>
+            </a>
+            <a class="my-1" href="https://www.instagram.com/pracownia.muzykon/" target="_blank">
+                <img src="./img/instragram.png" alt="instagram"/>
+            </a>
+            <a class="my-1" href="https://www.youtube.com/channel/UChftGxJwBVkUaLgvhjAmH0g/featured" target="_blank">
+                <img src="./img/youtube.png" alt="youtube"/>
+            </a>
         </div>
     </footer>
 </main>

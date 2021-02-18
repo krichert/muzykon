@@ -230,12 +230,18 @@ footer .partners-item {
   margin: 15px 0; }
 footer .link-container {
   margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  position: fixed;
+  left: 15px;
+  bottom: 0; }
   footer .link-container a {
     transition: transform 1s; }
   footer .link-container a:hover {
     transform: scale(1.2); }
   footer .link-container a:hover img {
     animation: swing ease-in-out 3s infinite; }
+
+.contain {
+  object-fit: contain; }
 
 /*# sourceMappingURL=style.css.map */

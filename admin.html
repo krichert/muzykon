@@ -91,6 +91,8 @@
                                 <th scope="col">Data</th>
                                 <th scope="col">Tytul</th>
                                 <th scope="col">Tekst</th>
+                                <th scope="col">Miniatura</th>
+                                <th scope="col" width="100px" class="text-center">Edytuj</th>
                                 <th scope="col" width="100px" class="text-center">Usuń</th>
                             </tr>
                             </thead>
@@ -125,8 +127,14 @@
                                            required="">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input type="file" class="form-control" id="newsPhoto" required="">
+                                </div>
+                            </div>
                             <div class="text-center">
                                 <button id="newsSubmit" class="btn btn-primary" type="submit">Dodaj</button>
+                                <button id="newsCancel" class="btn btn-secondary" type="submit">Cofnij</button>
                             </div>
                         </form>
                     </div>
@@ -176,6 +184,7 @@
                                     <th scope="col">Zajęcia</th>
                                     <th scope="col">Instruktor</th>
                                     <th scope="col">Sala</th>
+                                    <th scope="col" width="100px" class="text-center">Edytuj</th>
                                     <th width="100px" class="text-center" scope="col">Usuń</th>
                                 </tr>
                                 </thead>
@@ -191,6 +200,7 @@
                                     <th scope="col">Zajęcia</th>
                                     <th scope="col">Instruktor</th>
                                     <th scope="col">Sala</th>
+                                    <th scope="col" width="100px" class="text-center">Edytuj</th>
                                     <th width="100px" class="text-center" scope="col">Usuń</th>
                                 </tr>
                                 </thead>
@@ -206,6 +216,7 @@
                                     <th scope="col">Zajęcia</th>
                                     <th scope="col">Instruktor</th>
                                     <th scope="col">Sala</th>
+                                    <th scope="col" width="100px" class="text-center">Edytuj</th>
                                     <th width="100px" class="text-center" scope="col">Usuń</th>
                                 </tr>
                                 </thead>
@@ -221,6 +232,7 @@
                                     <th scope="col">Zajęcia</th>
                                     <th scope="col">Instruktor</th>
                                     <th scope="col">Sala</th>
+                                    <th scope="col" width="100px" class="text-center">Edytuj</th>
                                     <th width="100px" class="text-center" scope="col">Usuń</th>
                                 </tr>
                                 </thead>
@@ -236,6 +248,7 @@
                                     <th scope="col">Zajęcia</th>
                                     <th scope="col">Instruktor</th>
                                     <th scope="col">Sala</th>
+                                    <th scope="col" width="100px" class="text-center">Edytuj</th>
                                     <th width="100px" class="text-center" scope="col">Usuń</th>
                                 </tr>
                                 </thead>
@@ -251,6 +264,7 @@
                                     <th scope="col">Zajęcia</th>
                                     <th scope="col">Instruktor</th>
                                     <th scope="col">Sala</th>
+                                    <th scope="col" width="100px" class="text-center">Edytuj</th>
                                     <th width="100px" class="text-center" scope="col">Usuń</th>
                                 </tr>
                                 </thead>
@@ -266,6 +280,7 @@
                                     <th scope="col">Zajęcia</th>
                                     <th scope="col">Instruktor</th>
                                     <th scope="col">Sala</th>
+                                    <th scope="col" width="100px" class="text-center">Edytuj</th>
                                     <th width="100px" class="text-center" scope="col">Usuń</th>
                                 </tr>
                                 </thead>
@@ -319,11 +334,13 @@
                                         <option value="Sala koncertowa">Sala koncertowa</option>
                                         <option value="Sala A">Sala A</option>
                                         <option value="Sala B">Sala B</option>
+                                        <option value="Reżyserka">Reżyserka</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="text-center">
                                 <button id="planSubmit" class="btn btn-primary" type="submit">Dodaj</button>
+                                <button id="planCancel" class="btn btn-secondary" type="submit">Cofnij</button>
                             </div>
                         </form>
                     </div>
@@ -375,6 +392,7 @@
                                         <th scope="col">Data</th>
                                         <th scope="col">Czas</th>
                                         <th scope="col">Najemca</th>
+                                        <th scope="col" width="100px" class="text-center">Edytuj</th>
                                         <th scope="col" width="100px" class="text-center">Usuń</th>
                                     </tr>
                                     </thead>
@@ -391,6 +409,7 @@
                                         <th scope="col">Data</th>
                                         <th scope="col">Czas</th>
                                         <th scope="col">Najemca</th>
+                                        <th scope="col" width="100px" class="text-center">Edytuj</th>
                                         <th scope="col" width="100px" class="text-center">Usuń</th>
                                     </tr>
                                     </thead>
@@ -407,6 +426,7 @@
                                         <th scope="col">Data</th>
                                         <th scope="col">Czas</th>
                                         <th scope="col">Najemca</th>
+                                        <th scope="col" width="100px" class="text-center">Edytuj</th>
                                         <th scope="col" width="100px" class="text-center">Usuń</th>
                                     </tr>
                                     </thead>
@@ -462,12 +482,6 @@
                                     <div class="col-2 text-right pt-2">od</div>
                                     <div class="col-4">
                                         <select class="form-control" id="timetableStart" required="">
-                                            <option value="06:00">06:00</option>
-                                            <option value="06:30">06:30</option>
-                                            <option value="07:00">07:00</option>
-                                            <option value="07:30">07:30</option>
-                                            <option value="08:00">08:00</option>
-                                            <option value="08:30">08:30</option>
                                             <option value="09:00">09:00</option>
                                             <option value="09:30">09:30</option>
                                             <option value="10:00">10:00</option>
@@ -493,22 +507,11 @@
                                             <option value="20:00">20:00</option>
                                             <option value="20:30">20:30</option>
                                             <option value="21:00">21:00</option>
-                                            <option value="21:30">21:30</option>
-                                            <option value="22:00">22:00</option>
-                                            <option value="22:30">22:30</option>
-                                            <option value="23:00">23:00</option>
-                                            <option value="23:30">23:30</option>
                                         </select>
                                     </div>
                                     <div class="col-2 text-right pt-2">do</div>
                                     <div class="col-4">
                                         <select class="form-control" id="timetableEnd" required="">
-                                            <option value="06:00">06:00</option>
-                                            <option value="06:30">06:30</option>
-                                            <option value="07:00">07:00</option>
-                                            <option value="07:30">07:30</option>
-                                            <option value="08:00">08:00</option>
-                                            <option value="08:30">08:30</option>
                                             <option value="09:00">09:00</option>
                                             <option value="09:30">09:30</option>
                                             <option value="10:00">10:00</option>
@@ -534,17 +537,13 @@
                                             <option value="20:00">20:00</option>
                                             <option value="20:30">20:30</option>
                                             <option value="21:00">21:00</option>
-                                            <option value="21:30">21:30</option>
-                                            <option value="22:00">22:00</option>
-                                            <option value="22:30">22:30</option>
-                                            <option value="23:00">23:00</option>
-                                            <option value="23:30">23:30</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="text-center">
                                 <button id="timetableSubmit" class="btn btn-primary" type="submit">Dodaj</button>
+                                <button id="timetableCancel" class="btn btn-secondary" type="submit">Cofnij</button>
                             </div>
                         </form>
                     </div>
@@ -597,6 +596,7 @@
                                 <th scope="col">Instrumenty</th>
                                 <th scope="col">Opis</th>
                                 <th scope="col">Zdjęcie</th>
+                                <th scope="col" width="100px" class="text-center">Edytuj</th>
                                 <th scope="col" width="100px" class="text-center">Usuń</th>
                             </tr>
                             </thead>
@@ -609,7 +609,7 @@
                     </div>
                     <div class="news-form col-md-6 offset-md-3 mb-3">
                         <form>
-                            <h3 class="my-3">Dodaj członka</h3>
+                            <h3 class="my-3">Dodaj osobę</h3>
                             <div class="form-group row">
                                 <label for="crewName" class="col-2 col-form-label">Imię</label>
                                 <div class="col-10">
@@ -634,6 +634,7 @@
                                 </div>
                                 <div class="col-12 text-center mt-1">
                                     <button id="crewSubmit" class="btn btn-primary" type="submit">Dodaj</button>
+                                    <button id="crewCancel" class="btn btn-secondary" type="submit">Cofnij</button>
                                 </div>
                             </div>
                         </form>
@@ -653,7 +654,7 @@
             <div class="row d-flex justify-content-center">
                 <small><a href="index.html" class="app-back-link">< POWRÓT DO STRONY GŁÓWNEJ</a></small>
             </div>
-            <div class="row link-container justify-content-center">
+            <div class="row link-container justify-content-center flex-column">
                 <a class="mx-1" href="https://www.facebook.com/pracownia.muzykon" target="_blank">
                     <img src="./img/facebook.png" alt="facebook"/>
                 </a>

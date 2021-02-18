@@ -23,15 +23,14 @@ $(document).ready(function() {
         defaultView: 'timeGridWeek',
         locale: 'pl',
         allDaySlot: false,
-        minTime: "06:00",
-        maxTime: "23:00",
+        minTime: "09:00",
+        maxTime: "22:00",
         header: {
             left: '',
             center: '',
             right: 'prev today next'
         },
-        height: 500,
-        contentHeight: 500
+        contentHeight: 669
     });
 
     getData(today.getFullYear(), today.getMonth() + 1, calendar);

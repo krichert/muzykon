@@ -10,9 +10,17 @@ $(document).ready(function () {
                     id: key,
                     ...news[key]
                 }
-            }).forEach(function (el) {
+            }).reverse().forEach(function (el) {
                 var container = document.createElement('div');
                 container.className = 'news-container d-flex flex-column justify-content-center';
+
+                var imgContainer = document.createElement('div');
+                imgContainer.className = 'd-flex justify-content-center';
+
+                var img = document.createElement('img');
+                img.className = 'img-fluid contain';
+                img.alt = el.title;
+                img.src = el.url;
 
                 var date = document.createElement('span');
                 date.className = 'news-date text-center';
@@ -26,7 +34,11 @@ $(document).ready(function () {
                 description.className = 'news-description text-center';
                 description.innerText = el.text;
 
+                imgContainer.appendChild(img);
                 container.appendChild(date);
+                if (el.url) {
+                    container.appendChild(imgContainer);
+                }
                 container.appendChild(title);
                 container.appendChild(description);
 

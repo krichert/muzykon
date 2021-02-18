@@ -1,21 +1,43 @@
+var EDIT_CREW_ID = null;
+var IMAGE_CREW_URL = null;
+
+var crewNameInput = $('#crewName');
+var crewInstrumentsInput = $('#crewInstruments');
+var crewDescriptionInput = $('#crewDescription');
+var crewPhotoInput = $('#crewPhoto');
+var crewSubmit = $('#crewSubmit');
+var crewCancel = $('#crewCancel');
+
 $(document).ready(function () {
-    var crewNameInput = $('#crewName');
-    var crewInstrumentsInput = $('#crewInstruments');
-    var crewDescriptionInput = $('#crewDescription');
-    var crewPhotoInput = $('#crewPhoto');
-    var crewSubmit = $('#crewSubmit');
+    getCrew();
+    crewCancel.hide();
+});
 
-    crewSubmit.on('click', function (e) {
-        e.preventDefault();
+crewSubmit.on('click', function (e) {
+    e.preventDefault();
 
-        if (crewPhotoInput[0].files[0]) {
-            addCrew(crewPhotoInput[0].files[0], crewNameInput.val(), crewInstrumentsInput.val(), crewDescriptionInput.val())
+    if (crewPhotoInput[0].files[0]) {
+        addCrew(crewPhotoInput[0].files[0], crewNameInput.val(), crewInstrumentsInput.val(), crewDescriptionInput.val())
+    } else {
+        if (EDIT_CREW_ID) {
+            editCrew(crewNameInput.val(), crewInstrumentsInput.val(), crewDescriptionInput.val())
         } else {
             alert('Dodaj zdjęcie!')
         }
-    });
+    }
+});
 
-    getCrew();
+crewCancel.on('click', function (e) {
+    e.preventDefault();
+
+    crewNameInput.val('');
+    crewInstrumentsInput.val('');
+    crewDescriptionInput.val('');
+    crewPhotoInput.val('');
+    crewSubmit.text('Dodaj');
+    EDIT_CREW_ID = null;
+    IMAGE_CREW_URL = null;
+    crewCancel.hide();
 });
 
 function getCrew() {
@@ -53,14 +75,31 @@ function getCrew() {
 
                 imgCol.appendChild(img);
 
+                var edtCol = document.createElement('td');
+                var edtBtn = document.createElement('button');
+                edtBtn.innerText = '🖊';
+                edtBtn.className = 'btn btn-primary';
+                edtCol.className = 'text-center';
+                edtCol.appendChild(edtBtn);
+
+                edtBtn.addEventListener('click', function () {
+                    crewCancel.show();
+
+                    EDIT_CREW_ID = el.id;
+                    IMAGE_CREW_URL = el.url;
+
+                    crewSubmit.text('Zapisz');
+                    crewNameInput.val(el.name);
+                    crewInstrumentsInput.val(el.instruments);
+                    crewDescriptionInput.val(el.description);
+                });
+
                 var delCol = document.createElement('td');
                 var delBtn = document.createElement('button');
                 delBtn.innerText = 'X';
                 delBtn.className = 'btn btn-danger';
                 delCol.className = 'text-center';
-
                 delCol.appendChild(delBtn);
-
 
                 delBtn.addEventListener('click', function () {
                     removeCrew(el.id);
@@ -70,6 +109,7 @@ function getCrew() {
                 row.appendChild(instrumentsCol);
                 row.appendChild(descriptionCol);
                 row.appendChild(imgCol);
+                row.appendChild(edtCol);
                 row.appendChild(delCol);
 
                 tableBody.append(row);
@@ -87,7 +127,13 @@ function removeCrew(id) {
 }
 
 function addCrew(file, name, instruments, description) {
-    var key = firebase.database().ref('crew').push().key;
+    var key;
+
+    if (EDIT_CREW_ID) {
+        key = EDIT_CREW_ID;
+    } else {
+        key =  firebase.database().ref('crew').push().key;
+    }
 
     var uploadTask = firebase.storage().ref('crew/' + key).put(file)
 
@@ -108,4 +154,21 @@ function addCrew(file, name, instruments, description) {
             })
         });
     });
+}
+
+function editCrew(name, instruments, description) {
+    firebase.database().ref('crew/' + EDIT_CREW_ID).set({
+        name: name,
+        instruments: instruments,
+        description: description,
+        url: IMAGE_CREW_URL
+    }).then(function () {
+        getCrew();
+
+        crewNameInput.val('');
+        crewInstrumentsInput.val('');
+        crewDescriptionInput.val('');
+        crewPhotoInput.val('');
+        crewSubmit.text('Dodaj');
+    })
 }

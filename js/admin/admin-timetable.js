@@ -1,19 +1,22 @@
+var EDIT_TIMETABLE_ID = null;
+
+var today = new Date();
+
+var timetableYearInput = $('#timetableYear');
+var timetableMonthInput = $('#timetableMonth');
+var timetableDayInput = $('#timetableDay');
+var timetableRentierInput = $('#timetableRentier');
+var timetableRoomInput = $('#timetableRoom');
+var timetableStartTimeInput = $('#timetableStart');
+var timetableEndTimeInput = $('#timetableEnd');
+var timetableSubmit = $('#timetableSubmit');
+var timetableCancel = $('#timetableCancel');
+
+var timetableFetchYearInput = $('#timetableFetchYear');
+var timetableFetchMonthInput = $('#timetableFetchMonth');
+var timetableFetchSubmit = $('#timetableFetchSubmit');
+
 $(document).ready(function () {
-    var today = new Date();
-
-    var timetableYearInput = $('#timetableYear');
-    var timetableMonthInput = $('#timetableMonth');
-    var timetableDayInput = $('#timetableDay');
-    var timetableRentierInput = $('#timetableRentier');
-    var timetableRoomInput = $('#timetableRoom');
-    var timetableStartTimeInput = $('#timetableStart');
-    var timetableEndTimeInput = $('#timetableEnd');
-    var timetableSubmit = $('#timetableSubmit');
-
-    var timetableFetchYearInput = $('#timetableFetchYear');
-    var timetableFetchMonthInput = $('#timetableFetchMonth');
-    var timetableFetchSubmit = $('#timetableFetchSubmit');
-
     timetableFetchYearInput.val(today.getFullYear());
     timetableFetchMonthInput.val(today.getMonth() + 1);
 
@@ -31,26 +34,40 @@ $(document).ready(function () {
         }
     });
 
-
-    timetableSubmit.on('click', function (e) {
-        e.preventDefault();
-
-        if (timetableStartTimeInput.val() < timetableEndTimeInput.val()) {
-            addTimetable(
-                timetableRoomInput.val(),
-                timetableYearInput.val(),
-                timetableMonthInput.val(),
-                timetableDayInput.val(),
-                timetableRentierInput.val(),
-                timetableStartTimeInput.val(),
-                timetableEndTimeInput.val()
-            )
-        } else {
-            alert('Koniec musi być później niż początek.')
-        }
-    });
+    timetableCancel.hide();
 
     getTimetable();
+});
+
+timetableSubmit.on('click', function (e) {
+    e.preventDefault();
+
+    if (timetableStartTimeInput.val() < timetableEndTimeInput.val()) {
+        addTimetable(
+            timetableRoomInput.val(),
+            timetableYearInput.val(),
+            timetableMonthInput.val(),
+            timetableDayInput.val(),
+            timetableRentierInput.val(),
+            timetableStartTimeInput.val(),
+            timetableEndTimeInput.val()
+        )
+    } else {
+        alert('Koniec musi być później niż początek.')
+    }
+});
+
+timetableCancel.on('click', function (e) {
+    e.preventDefault();
+
+    timetableSubmit.text('Dodaj');
+    timetableRoomInput.prop( "disabled", false );
+    timetableYearInput.prop( "disabled", false );
+    timetableMonthInput.prop( "disabled", false );
+
+    timetableRentierInput.val('');
+    EDIT_TIMETABLE_ID = null;
+    timetableCancel.hide();
 });
 
 function getTimetable() {
@@ -115,14 +132,33 @@ function removeTimetable(room, year, month, id) {
 }
 
 function addTimetable(room, year, month, day, rentier, start, end) {
-    return firebase.database().ref('timetable/' + room + '/' + year + '/' + month).push({
-        rentier: rentier,
-        start: start,
-        end: end,
-        day: day
-    }).then(function () {
-        getTimetable();
-    })
+    if (EDIT_TIMETABLE_ID) {
+        firebase.database().ref('timetable/' + room + '/' + year + '/' + month + '/' + EDIT_TIMETABLE_ID).set({
+            rentier: rentier,
+            start: start,
+            end: end,
+            day: day
+        }).then(function () {
+            getTimetable();
+            timetableRentierInput.val('');
+            timetableRoomInput.prop( "disabled", false );
+            timetableYearInput.prop( "disabled", false );
+            timetableMonthInput.prop( "disabled", false );
+            timetableSubmit.text('Dodaj');
+            timetableCancel.hide();
+        })
+    } else {
+        return firebase.database().ref('timetable/' + room + '/' + year + '/' + month).push({
+            rentier: rentier,
+            start: start,
+            end: end,
+            day: day
+        }).then(function () {
+            getTimetable();
+            timetableRentierInput.val('');
+        })
+    }
+
 }
 
 function createTimetableRow(el) {
@@ -132,14 +168,34 @@ function createTimetableRow(el) {
     var timeCol = document.createElement('td');
     var rentierCol = document.createElement('td');
 
+    var edtCol = document.createElement('td');
+    var edtBtn = document.createElement('button');
+    edtBtn.innerText = '🖊️';
+    edtBtn.className = 'btn btn-primary';
+    edtCol.className = 'text-center';
+    edtCol.appendChild(edtBtn);
+
+    edtBtn.addEventListener('click', function () {
+        EDIT_TIMETABLE_ID = el.id;
+        timetableRoomInput.prop( "disabled", true );
+        timetableYearInput.prop( "disabled", true );
+        timetableMonthInput.prop( "disabled", true );
+
+
+        timetableDayInput.val(el.day)
+        timetableRentierInput.val(el.rentier)
+        timetableStartTimeInput.val(el.start)
+        timetableEndTimeInput.val(el.end)
+        timetableCancel.show();
+        timetableSubmit.text('Zapisz');
+    });
+
     var delCol = document.createElement('td');
     var delBtn = document.createElement('button');
     delBtn.innerText = 'X';
     delBtn.className = 'btn btn-danger';
     delCol.className = 'text-center';
-
     delCol.appendChild(delBtn);
-
 
     delBtn.addEventListener('click', function () {
         removeTimetable(el.room, el.year, el.month, el.id);
@@ -153,6 +209,7 @@ function createTimetableRow(el) {
     row.appendChild(dateCol);
     row.appendChild(timeCol);
     row.appendChild(rentierCol);
+    row.appendChild(edtCol);
     row.appendChild(delCol);
 
     return row;
